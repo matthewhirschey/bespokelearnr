@@ -22,3 +22,5 @@ Suggests:
     testthat,
     spelling
 Language: en-US
+URL: https://github.com/matthewhirschey/bespokelearnr
+BugReports: https://github.com/matthewhirschey/bespokelearnr/issues
