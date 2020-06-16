@@ -1,0 +1,115 @@
+---
+title: ''
+subtitle: ''
+author: ''
+date: ''
+output: ~
+learnr::tutorial:
+  df_print: tibble
+runtime: shiny_prerendered
+---
+```{r setup, include=FALSE}
+library(learnr)
+library(tidyverse)
+library(knitr)
+library(here)
+library(twitterwidget)
+library(rlang)
+knitr::opts_chunk$set(echo = FALSE, 
+                      fig.align="center")
+setwd(system.file(package = "bespokelearnr"))
+source("tutorials/bespokelecture/code/metadata.R") #loads dataset-specific variables
+source("tutorials/bespokelecture/code/bespoke.R") #loads custom objects
+```
+# R <br>Integrated Development Environment
+Any questions?
+
+## R
+Statistical Programming Language
+```{r r_exercise, exercise=TRUE}
+
+```
+  
+```{r r_image, echo=FALSE, fig.cap="", out.height = '100%'}
+url <- "https://source.unsplash.com/Vb8pR6cKCRI/300×200"
+knitr::include_graphics(url)
+```
+<font size = "1">Photo by [Photo by Evan Hein on Unsplash](https://unsplash.com/@evanheinphoto)</font>
+
+## Rstudio
+Integrated Development Environment
+
+```{r r_de, echo=FALSE, fig.cap="", out.height = '100%'}
+url <- "https://source.unsplash.com/XuDPnpox8tc/300×200"
+knitr::include_graphics(url)
+```
+<font size = "1">[Photo by Jaromír Kavan on Unsplash](https://unsplash.com/@jerrykavan)</font>
+
+---
+[Open Rstudio](http://www.rstudio.cloud)  
+<iframe src="http://www.rstudio.cloud"></iframe>
+
+## Rstudio Demonstration
+Go to code/  
+Open 01_r_demo.Rmd  
+Follow along.  
+## `filter()` rows based on certain condition(s) {.build}
+
+The `filter()` verb evalutes a logical statement, and if a row meets the condition of this statement (i.e. is true) then it gets chosen (or "filtered").  
+  
+  
+**All other rows are discarded**  
+
+## `filter()` {.build}
+
+Filtering can be performed on **categorical** data
+
+``r dataframe_name` %>%`     
+    `filter(`r colnames(df_character_select)` == "`r df_character_filter`") %>%`     
+    `head(3)`  
+
+```{r filter_exercise, exercise=TRUE}
+
+```
+
+Note that `filter()` only applies to rows, and has no effect on columns
+
+## `filter()` {.build}
+
+Filtering can also be performed on **numeric** data
+
+For example, if you wanted to choose `r colnames(df_numeric_select)` with a value greater than `r df_numeric_filter`, you would run the following. 
+
+``r dataframe_name` %>%`     
+    `filter(`r colnames(df_numeric_select)` > `r df_numeric_filter`) %>%`     
+    `head(3)`  
+
+```{r filter_exercise2, exercise=TRUE}
+
+```
+
+## `filter()` {.build}
+
+To filter on multiple conditions, you can write a sequence of `filter()` commands
+
+``r dataframe_name` %>%`       
+    `filter(`r colnames(df_character_select)` == "`r df_character_filter`") %>%`  
+    `filter(`r colnames(df_numeric_select)` > `r df_numeric_filter`) %>%`    
+    `head(3)`  
+
+```{r filter_exercise3, exercise=TRUE}
+
+```
+
+## `filter()` {.build}
+
+To avoid writing multiple `filter()` commands, multiple logical statements can be put inside a single `filter()` command, separated by commas
+
+``r dataframe_name` %>%`           
+    `filter(`r colnames(df_character_select)` == "`r df_character_filter`",`  
+           ` `r colnames(df_numeric_select)` > `r df_numeric_filter`) %>%`      
+    `head(3)`  
+
+```{r filter_exercise4, exercise=TRUE}
+
+```

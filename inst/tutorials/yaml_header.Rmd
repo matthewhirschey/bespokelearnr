@@ -1,8 +1,8 @@
 ---
 title: ""
 subtitle: ""
-author: "Matthew Hirschey, Ph.D."
-date: "`r format(Sys.time(), '%d %B, %Y')`"
+author: ""
+date: ""
 output: 
 learnr::tutorial:
     df_print: tibble

@@ -1,9 +1,14 @@
-# NOTE: The way you have the regex written, this function cannot detect numbers above 9
+# Trying the fix the regex problem in `make_lecture.R`
 
-make_lecture <- function(list, output_file){
+make_lecture_v2 <- function(list, output_file){
   setwd(system.file("tutorials", package = "bespokelearnr"))
-  b <- noquote(paste0(list, collapse = "|"))
-  textFiles <- list.files(pattern = paste0("^[", b, "]"))
+  single <- list[list < 10]
+  double <- list[list >= 10]
+
+  text_single <- list.files(pattern = paste0(single, collapse = "|"))
+  text_double <- list.files(pattern = paste0(double, collapse = "|"))
+
+  textFiles <- c(text_single, text_double)
   print(textFiles)
 
   list_files <- list()
