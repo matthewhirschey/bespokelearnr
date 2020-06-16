@@ -1,5 +1,6 @@
-make_lecture <- function(list, output_file = "bespokelecture.Rmd"){
-  setwd(here::here("tutorials", "bespokelecture"))
+# go to `tutorials` folder and set is as the working directory
+
+make_lecture <- function(list, output_file = "bespokelecture/bespokelecture.Rmd"){
   b <- noquote(paste0(list, collapse = "|"))
   textFiles <- list.files(pattern = paste0("^[", b, "]"))
   print(textFiles)
