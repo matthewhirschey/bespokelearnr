@@ -17,6 +17,7 @@ library(twitterwidget)
 library(rlang)
 knitr::opts_chunk$set(echo = FALSE, 
                       fig.align="center")
+setwd(package = "bespokelearnr")
 source("tutorials/bespokelecture/code/metadata.R") #loads dataset-specific variables
 source("tutorials/bespokelecture/code/bespoke.R") #loads custom objects
 ```
