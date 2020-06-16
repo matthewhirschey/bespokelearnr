@@ -1,7 +1,8 @@
 # go to `tutorials` folder and set is as the working directory
 # Trying the fix the regex problem in `make_lecture.R`
 
-make_lecture_v2 <- function(list, output_file = "bespokelecture/bespokelecture.Rmd"){
+make_lecture_v2 <- function(list, output_file){
+  setwd(system.file("tutorials", package = "bespokelearnr"))
   single <- list[list < 10]
   double <- list[list >= 10]
 
@@ -28,6 +29,7 @@ make_lecture_v2 <- function(list, output_file = "bespokelecture/bespokelecture.R
   )
 
   output <- unlist(output)
+  output_file <- paste0(system.file("tutorials/bespokelecture", package = "bespokelearnr"), "/bespokelecture.Rmd")
   writeLines(output, con = output_file)
 }
 
