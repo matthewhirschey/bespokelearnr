@@ -1,7 +1,7 @@
-# go to `tutorials` folder and set is as the working directory
 # NOTE: The way you have the regex written, this function cannot detect numbers above 9
 
-make_lecture <- function(list, output_file = "bespokelecture/bespokelecture.Rmd"){
+make_lecture <- function(list, output_file){
+  setwd(system.file("tutorials", package = "bespokelearnr"))
   b <- noquote(paste0(list, collapse = "|"))
   textFiles <- list.files(pattern = paste0("^[", b, "]"))
   print(textFiles)
@@ -23,6 +23,7 @@ make_lecture <- function(list, output_file = "bespokelecture/bespokelecture.Rmd"
   )
 
   output <- unlist(output)
+  output_file <- paste0(system.file("tutorials/bespokelecture", package = "bespokelearnr"), "/bespokelecture.Rmd")
   writeLines(output, con = output_file)
 }
 

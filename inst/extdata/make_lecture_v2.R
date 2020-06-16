@@ -1,4 +1,3 @@
-# go to `tutorials` folder and set is as the working directory
 # Trying the fix the regex problem in `make_lecture.R`
 
 make_lecture_v2 <- function(list, output_file){
