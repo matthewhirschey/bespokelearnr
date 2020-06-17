@@ -1,0 +1,10 @@
+---
+title: "Counting COVID"
+subtitle: "Key elements of the analytical toolbox for understanding COVID-19"
+author: "Matthew Hirschey and Akshay Bareja"
+date: ""
+output: 
+  ioslides_presentation:
+    widescreen: true
+runtime: shiny_prerendered
+---
