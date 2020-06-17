@@ -1,4 +1,11 @@
+#' Make Tutorial Function
+#'
+#' This function allows you to make bespoke tutorials
+#' @param list Numeric vector of numbers corresponding to the essential lectures you want to use
+#' @keywords tutorial
 #' @export
+#' @examples
+#' make_tutorial(list = c(0, 7, 10))
 
 make_tutorial <- function(list, output_file){
   setwd(system.file("tutorials", package = "bespokelearnr"))
@@ -39,6 +46,15 @@ make_tutorial <- function(list, output_file){
   output_file <- paste0(system.file("tutorials/bespoketutorial", package = "bespokelearnr"), "/bespoketutorial.Rmd")
   writeLines(output, con = output_file)
 }
+
+#' Make Lecture Function
+#'
+#' This function allows you to make bespoke lectures
+#' @param list Numeric vector of numbers corresponding to the essential lectures you want to use
+#' @keywords lecture
+#' @export
+#' @examples
+#' make_lecture(list = c(0, 7, 10))
 
 make_lecture<- function(list, output_file){
   setwd(system.file("tutorials", package = "bespokelearnr"))
