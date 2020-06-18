@@ -21,7 +21,11 @@ make_tutorial <- function(list, output_file){
     text_single <- a[str_detect(a, pattern = paste0(single, collapse = "|"))[1:10]][1:length(single)]
   }
 
-  text_double <- a[str_detect(a, pattern = paste0(double, collapse = "|"))][1:length(double)]
+  if(length(double) == 0){
+    text_double <- NULL
+  } else {
+    text_double <- a[str_detect(a, pattern = paste0(double, collapse = "|"))][1:length(double)]
+  }
 
   textFiles <- c(text_single, text_double)
   print(textFiles)
@@ -70,7 +74,11 @@ make_lecture<- function(list, output_file){
     text_single <- a[str_detect(a, pattern = paste0(single, collapse = "|"))[1:10]][1:length(single)]
   }
 
-  text_double <- a[str_detect(a, pattern = paste0(double, collapse = "|"))][1:length(double)]
+  if(length(double) == 0){
+    text_double <- NULL
+  } else {
+    text_double <- a[str_detect(a, pattern = paste0(double, collapse = "|"))][1:length(double)]
+  }
 
   textFiles <- c(text_single, text_double)
   print(textFiles)
