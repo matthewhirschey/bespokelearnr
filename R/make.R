@@ -9,21 +9,14 @@
 
 make_tutorial <- function(list, output_file){
   setwd(system.file("tutorials", package = "bespokelearnr"))
-  single <- list[list < 10]
-  double <- list[list >= 10]
+  all_files <- list.files()
+  regex_string <- paste0("^", list, "_")
 
-  a <- list.files()[str_detect(list.files(), "^\\d")] # re-ordering files
-  a <- a[order(as.numeric(str_extract(a, "\\d+")))] # re-ordering files
+  textFiles <- character()
 
-  if(length(single) == 0){
-    text_single <- NULL
-  } else {
-    text_single <- a[str_detect(a, pattern = paste0(single, collapse = "|"))[1:10]][1:length(single)]
+  for(i in 1:length(regex_string)){
+    textFiles[[i]] <- all_files[str_detect(all_files, regex_string[i])]
   }
-
-  text_double <- a[str_detect(a, pattern = paste0(double, collapse = "|"))][1:length(double)]
-
-  textFiles <- c(text_single, text_double)
   print(textFiles)
 
   list_files <- list()
@@ -58,21 +51,14 @@ make_tutorial <- function(list, output_file){
 
 make_lecture<- function(list, output_file){
   setwd(system.file("tutorials", package = "bespokelearnr"))
-  single <- list[list < 10]
-  double <- list[list >= 10]
+  all_files <- list.files()
+  regex_string <- paste0("^", list, "_")
 
-  a <- list.files()[str_detect(list.files(), "^\\d")] # re-ordering files
-  a <- a[order(as.numeric(str_extract(a, "\\d+")))] # re-ordering files
+  textFiles <- character()
 
-  if(length(single) == 0){
-    text_single <- NULL
-  } else {
-    text_single <- a[str_detect(a, pattern = paste0(single, collapse = "|"))[1:10]][1:length(single)]
+  for(i in 1:length(regex_string)){
+    textFiles[[i]] <- all_files[str_detect(all_files, regex_string[i])]
   }
-
-  text_double <- a[str_detect(a, pattern = paste0(double, collapse = "|"))][1:length(double)]
-
-  textFiles <- c(text_single, text_double)
   print(textFiles)
 
   list_files <- list()
