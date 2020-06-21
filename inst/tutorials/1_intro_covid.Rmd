@@ -1,6 +1,7 @@
 ## COVID-19 rapidly infected people across the US
-```{r covid, echo=FALSE, fig.cap="", out.height = '100%'}
-#covid map from AKSHAY
+```{r covid map, echo=FALSE, fig.cap="", out.height = '50%', out.width = '50%'}
+url <- "https://github.com/BAREJAA/bespokelearnr/blob/merge_essentials/inst/tutorials/bespokelecture/data/covid.gif?raw=true"
+knitr::include_graphics(url)
 ```
 
 ## Rapid emergence generated several healthcare decision-making challenges {.build}
