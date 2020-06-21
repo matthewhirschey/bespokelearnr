@@ -15,7 +15,7 @@ make_tutorial <- function(list, output_file){
   textFiles <- character()
 
   for(i in 1:length(regex_string)){
-    textFiles[[i]] <- all_files[str_detect(all_files, regex_string[i])]
+    textFiles[i] <- all_files[str_detect(all_files, regex_string[i])]
   }
   print(textFiles)
 
@@ -57,7 +57,7 @@ make_lecture<- function(list, output_file){
   textFiles <- character()
 
   for(i in 1:length(regex_string)){
-    textFiles[[i]] <- all_files[str_detect(all_files, regex_string[i])]
+    textFiles[i] <- all_files[str_detect(all_files, regex_string[i])]
   }
   print(textFiles)
 
