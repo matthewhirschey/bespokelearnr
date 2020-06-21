@@ -1,56 +1,6 @@
 ## COVID-19 rapidly infected people across the US
-```{r covid, echo=FALSE, warning = FALSE, fig.cap="", out.height = '100%'}
-url <- "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv"
-states <- read_csv(url)
-spdf <- geojson_read("tutorials/bespokelecture/data/us_states_hexgrid.geojson",  what = "sp") 
-spdf@data = spdf@data %>% mutate(google_name = gsub(" \\(United States\\)", "", google_name))
-spdf_fortified <- tidy(spdf, region = "google_name")
-
-# Calculate the centroid of each hexagon (by using the gCentroid function) to add the label
-centers <- data.frame(gCentroid(spdf, byid=TRUE), id=spdf@data$iso3166_2)
-
-# join `spdf_fortified` with `states`
-spdf_covid <- spdf_fortified %>%
-  left_join(states, by=c("id"="state")) 
-
-# create bins for your legend
-spdf_covid <- spdf_covid %>% 
-                mutate(bin = case_when(
-                  cases < 500 ~ "<500",
-                  cases > 500 & cases < 1000 ~ "500-1000",
-                  cases > 1000 & cases < 2000 ~ "1000-2000",
-                  cases > 2000 & cases < 5000 ~ "2000-5000",
-                  cases > 5000 & cases < 10000 ~ "5000-10000",
-                  cases > 10000 & cases < 20000 ~ "10000-20000",
-                  cases > 20000 & cases < 40000 ~ "20000-40000",
-                  cases > 40000 & cases < 60000 ~ "40000-80000",
-                  cases > 80000 & cases < 100000 ~ "80000-100000",
-                  cases > 100000 ~ "100000+"
-                ))
-spdf_covid$bin <- factor(spdf_covid$bin, levels = c("<500", "500-1000", "1000-2000", "2000-5000", "5000-10000", "10000-20000", "20000-40000", "40000-80000", "80000-100000", "100000+"))
-
-ggplot() +
-  geom_polygon(data=spdf_covid, aes(fill = bin, x = long, y = lat, group = id), size=0, alpha=0.9) +
-  geom_text(data=centers, aes(x=x, y=y, label=id), color="white", size=3, alpha=0.6) +
-  theme_void() +
-  theme(
-    legend.position = "right",
-    text = element_text(color = "#22211d"),
-    plot.background = element_rect(fill = "#f5f5f2", color = NA), 
-    panel.background = element_rect(fill = "#f5f5f2", color = NA), 
-    legend.background = element_rect(fill = "#f5f5f2", color = NA),
-    plot.title = element_text(size= 22, hjust=0.5, color = "#4e4d47", margin = margin(b = -0.1, t = 0.4, l = 2, unit = "cm")),
-  ) +
-  scale_fill_viridis_d() +
-  labs(title = "A map of COVID-19 cases, state by state",
-       subtitle = 'Date: {frame_time}',
-       caption = "Data Source: The New York Times",
-       fill = "") +
-  transition_time(date) +
-  enter_fade() +
-  exit_fade() -> p
-
-animate(p, end_pause = 24)
+```{r covid map, echo = FALSE, fig.cap="", out.height = '100%'}
+knitr::include_graphics("inst/tutorial/bespokelecture/data/covid.gif")
 ```
 
 ## Rapid emergence generated several healthcare decision-making challenges {.build}
