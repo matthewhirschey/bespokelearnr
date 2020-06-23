@@ -11,4 +11,5 @@ Some of the things you can do are -
   
 - obtain summary statistics on individual groups within your datasets  
   
-The main verbs we will cover are `select()`, `filter()`, `arrange()`, `mutate()`, and `summarise()`. These all combine naturally with `group_by()` which allows you to perform any operation "by group"
+The main verbs we will cover are `select()`, `filter()`, `arrange()`, `mutate()`, and `summarise()`. These all combine naturally with `group_by()` which allows you to perform any operation "by group"  
+ 
