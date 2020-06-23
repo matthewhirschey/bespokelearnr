@@ -36,3 +36,4 @@ The alternative to using `%>%` is running the following code
 filter(select(`r dataframe_name`, `r colnames(df_character_select)`, `r colnames(df_numeric_select)`), `r colnames(df_character_select)` == "`r df_character_filter`")
 
 Although this is only one line as opposed to three, it's both more difficult to write and more difficult to read  
+  

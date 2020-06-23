@@ -91,9 +91,9 @@ morning_routine <- wakeup(self) %>%
 What does this code do? 
 
 ``r dataframe_name` %>%`  
-`select(`r colnames(df_input)[2]`, `r colnames(df_input)[3]`) %>%`  
-`group_by(`r colnames(df_input)[3]`) %>%`  
-`summarize(mean(`r colnames(df_input)[2]`))`  
+`select(`r colnames(df_numeric)`, `r colnames(df_character)`) %>%`  
+`group_by(`r colnames(df_character)`) %>%`  
+`summarize(mean(`r colnames(df_numeric)`))`  
   
 Try it out here!
 ```{r pipe_ex, exercise=TRUE}
