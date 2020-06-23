@@ -8,6 +8,7 @@ library(rlang)
 library(ggrepel)
 library(viridis)
 library(gghighlight)
+library(patchwork)
 knitr::opts_chunk$set(echo = FALSE, 
                       fig.align="center")
 setwd(system.file(package = "bespokelearnr"))
