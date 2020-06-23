@@ -93,10 +93,9 @@ What does this code do?
 ``r dataframe_name` %>%`  
 `select(`r colnames(df_numeric_select)`, `r colnames(df_character_select)`) %>%`  
 `group_by(`r colnames(df_character_select)`) %>%`  
-`summarize(mean(`r colnames(df_numeric_select)`))`  
+`summarize(mean(`r colnames(df_numeric_select)`))`    
   
-Try it out here!
-```{r pipe_ex, exercise=TRUE}
+```{r pipe_ex, exercise=TRUE, warning = FALSE, message = FALSE}
 
 ```
 ## Writing code IS NOT like drawing an owl
@@ -111,4 +110,7 @@ knitr::include_graphics(url)
 url <- "https://github.com/rstudio-education/datascience-box/raw/master/slides/u1_d01-meet-the-toolkit/img/lego-steps.png"
 knitr::include_graphics(url)
 ```
-<font size = "1">https://datasciencebox.org</font>
+<font size = "1">https://datasciencebox.org</font> 
+
+
+  
