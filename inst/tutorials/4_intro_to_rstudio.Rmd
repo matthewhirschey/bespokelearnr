@@ -26,7 +26,4 @@ knitr::include_graphics(url)
 [Open Rstudio](http://www.rstudio.cloud)  
 <iframe src="http://www.rstudio.cloud"></iframe>
 
-## Rstudio Demonstration
-Go to code/  
-Open 01_r_demo.Rmd  
-Follow along.  
+ 

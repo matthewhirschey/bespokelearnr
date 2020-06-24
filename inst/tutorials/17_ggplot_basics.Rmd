@@ -7,33 +7,6 @@ knitr::include_graphics(url)
 ```
 <font size = "1">[https://ggplot2.tidyverse.org](https://ggplot2.tidyverse.org)</font>
 
-## A basic plot using `ggplot` in R
-We ended the last class with:
-
-```{r ggplot_basic, echo=TRUE, message=FALSE, warning=FALSE, eval=FALSE}
-ggplot(heart, aes(x = sex, y = chol)) +
-  geom_point(color = "darkblue", size = 3) +
-  labs(x = "sex", 
-       y = "Cholesterol", 
-       title = "Cholesterol values from the heart disease dataset", 
-       caption = "Data from Kaggle | Plot from @matthewhirschey") +
-  theme_minimal() +
-  NULL
-```
-
-## which built this...
-```{r ggplot_basic2, message=FALSE, warning=FALSE, echo=FALSE}
-#need to parameterize this; embed rmd here?; but still need to parameterize that doc.
-ggplot(heart, aes(x = sex, y = chol)) +
-  geom_point(color = "darkblue", size = 3) +
-  labs(x = "sex", y = "Cholesterol", title = "Cholesterol values from the heart disease dataset", caption = "Data from Kaggle | Plot from @matthewhirschey") +
-  theme_minimal() +
-  NULL
-```
-
-# Basic ggplot2
-Any questions from last week?
-
 ## Basics of a ggplot code {.build}
 
 Below is an example of the most basic form of the ggplot code  

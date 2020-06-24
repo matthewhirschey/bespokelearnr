@@ -20,7 +20,7 @@ plot1 + plot2
 `plot2 <-  ggplot(`r df_numeric1_name`, `r df_numeric2_name`) +`  
   `geom_smooth(aes(`r df_numeric1_name`, `r df_numeric2_name`))`   
 
-## Choosing your (geom)itries
+## Choosing your (geom)etries
 Different data types require different plot types.  
   
 When plotting your data, it is often helpful to take a glimpse at the data you intend to plot to know what kinds of variables you will be working with

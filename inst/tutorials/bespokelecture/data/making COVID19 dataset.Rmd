@@ -38,7 +38,10 @@ cdc_weighted %>%
 
 cdc_df <- bind_cols(cdc_dist[ , -1], cdc_weighted[ , 4])
 # need an `id` column
+cdc_df %>% 
+  drop_na() -> cdc_df
 cdc_df$row_id <- 1:nrow(cdc_df)
+
 saveRDS(cdc_df, "cdc.rds")
 
 # dataset for merge 

@@ -115,13 +115,5 @@ The setup chunk is always run once before anything else
 url <- "https://github.com/matthewhirschey/tidybiology-plusds/raw/master/media/setup.png"
 knitr::include_graphics(url)
 ```
-
-## Set-up Chunk Exercise
-Add a setup chunk (as shown below) to the top of `02_rmd_exercise.Rmd`.  
-Use it to load the tidyverse package (*remember to run this chunk*)  
-Then uncomment and run the final code chunk at the bottom of your file.  
   
-```{r setup_chunk2, echo=FALSE, fig.cap="", out.width='66%'}
-url <- "https://github.com/matthewhirschey/tidybiology-plusds/raw/master/media/setup2.png"
-knitr::include_graphics(url)
-```
+  
