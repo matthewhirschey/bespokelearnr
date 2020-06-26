@@ -7,22 +7,26 @@
 
 <!-- badges: end -->
 
-The goal of bespokelearnr is to …
+This package generates bespoke learning materials for a workshop-style
+class that provides an introduction to the emerging field of Data
+Science in R, including data analysis and visualization, with a
+particular focus on its utility for biological insight. In class,
+students will be provided with biological datasets using this package,
+and introduced to the `tidyverse` and `code` used to examine data.
 
 ## Installation
 
-You can install the released version of bespokelearnr from
+You **cannot** yet install the released version of tidybiology from
 [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
 install.packages("bespokelearnr")
 ```
 
-## Example
-
-This is a basic example which shows you how to solve a common problem:
+So in the meantime, use the development version from
+[GitHub](https://github.com/) with:
 
 ``` r
-#library(bespokelearnr)
-## basic example code
+# install.packages("devtools")
+devtools::install_github("matthewhirschey/bespokelearnr")
 ```

@@ -1,4 +1,4 @@
-make_lecture<- function(list, output_file){
+make_tutorial <- function(list, output_file){
   setwd(system.file("tutorials", package = "bespokelearnr"))
   single <- list[list < 10]
   double <- list[list >= 10]
@@ -22,7 +22,7 @@ make_lecture<- function(list, output_file){
     list_files[[i]] <- readLines(textFiles[i])
   }
 
-  yaml_list <- yaml::yaml.load(readLines("yaml_header_lecture.Rmd"))
+  yaml_list <- yaml::yaml.load(readLines("yaml_header_tutorial.Rmd"))
   setup_chunk <- readLines("setup_chunk.Rmd")
 
   output <- c(
@@ -34,6 +34,6 @@ make_lecture<- function(list, output_file){
   )
 
   output <- unlist(output)
-  output_file <- paste0(system.file("tutorials/bespokelecture", package = "bespokelearnr"), "/bespokelecture.Rmd")
+  output_file <- paste0(system.file("tutorials/bespoketutorial", package = "bespokelearnr"), "/bespoketutorial.Rmd")
   writeLines(output, con = output_file)
 }
