@@ -2,6 +2,7 @@
 #'
 #' This function allows you to make bespoke tutorials
 #' @param list Numeric vector of numbers corresponding to the essential lectures you want to use
+#' @param output_file Path to place compiled file in 'tutorials/bespoketutorial' dir
 #' @keywords tutorial
 #' @export
 #' @examples
@@ -15,7 +16,7 @@ make_tutorial <- function(list, output_file){
   textFiles <- character()
 
   for(i in 1:length(regex_string)){
-    textFiles[i] <- all_files[str_detect(all_files, regex_string[i])]
+    textFiles[i] <- all_files[stringr::str_detect(all_files, regex_string[i])]
   }
   print(textFiles)
 
@@ -44,6 +45,7 @@ make_tutorial <- function(list, output_file){
 #'
 #' This function allows you to make bespoke lectures
 #' @param list Numeric vector of numbers corresponding to the essential lectures you want to use
+#' @param output_file Path to place compiled file in 'tutorials/bespoketutorial' dir
 #' @keywords lecture
 #' @export
 #' @examples
@@ -57,7 +59,7 @@ make_lecture<- function(list, output_file){
   textFiles <- character()
 
   for(i in 1:length(regex_string)){
-    textFiles[i] <- all_files[str_detect(all_files, regex_string[i])]
+    textFiles[i] <- all_files[stringr::str_detect(all_files, regex_string[i])]
   }
   print(textFiles)
 

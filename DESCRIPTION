@@ -18,11 +18,18 @@ Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.0
+Depends: R (>= 3.5)
+Imports:
+    stringr, 
+    rlang,
+    dplyr,
+    knitr, 
+    yaml, 
+    rstudioapi
 Suggests: 
     testthat,
     spelling
 Language: en-US
 URL: https://github.com/matthewhirschey/bespokelearnr
 BugReports: https://github.com/matthewhirschey/bespokelearnr/issues
-Imports:
-    stringr
+

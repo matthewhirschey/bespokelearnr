@@ -8,6 +8,8 @@ make_lecture(list, output_file)
 }
 \arguments{
 \item{list}{Numeric vector of numbers corresponding to the essential lectures you want to use}
+
+\item{output_file}{Path to place compiled file in 'tutorials/bespoketutorial' dir}
 }
 \description{
 This function allows you to make bespoke lectures
