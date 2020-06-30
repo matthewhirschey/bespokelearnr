@@ -7,7 +7,7 @@
 make_list(lecture_num)
 }
 \arguments{
-\item{list}{Numeric vector of numbers corresponding to the essential lectures you want to use}
+\item{lecture_num}{Numeric vector of numbers corresponding to the essential lectures you want to use}
 }
 \description{
 This internal function allows you to make a list of lectures for bespoke content generation
