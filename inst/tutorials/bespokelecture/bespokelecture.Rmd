@@ -74,4 +74,7 @@ excel_plot
   
 <bold>"It's not important which language you choose, but rather what you can do with it"</bold>  
   
-The focus here will be on the R programming language
+The focus here will be on the R programming language  
+
+## Fin
+The end.  

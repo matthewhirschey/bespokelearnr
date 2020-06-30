@@ -17,7 +17,7 @@ make_list <- function(lecture_num, path = system.file("tutorials", package = "be
 
   list_files <- list()
   for(i in 1:length(textFiles)){
-    list_files[[i]] <- readLines(textFiles[i])
+    list_files[[i]] <- readLines(paste0(path, "/", textFiles[i]))
   }
 return(list_files)
 }
@@ -27,12 +27,13 @@ return(list_files)
 #' This function allows you to make bespoke tutorials
 #' @param lecture_num Numeric vector of numbers corresponding to the essential lectures you want to use
 #' @param path Path to find files to build bespoke tutorial
+#' @param output_file Path to make output file of bespoke tutorial
 #' @keywords tutorial
 #' @export
 #' @examples
 #' make_tutorial(list = c(0, 7, 10))
 
-make_tutorial <- function(lecture_num, path = system.file("tutorials", package = "bespokelearnr")){
+make_tutorial <- function(lecture_num, path = system.file("tutorials", package = "bespokelearnr"), output_file){
   list_files <- make_list(lecture_num)
   yaml_list <- yaml::yaml.load(readLines("yaml_header_tutorial.Rmd"))
   setup_chunk <- readLines("setup_chunk.Rmd")
@@ -55,15 +56,16 @@ make_tutorial <- function(lecture_num, path = system.file("tutorials", package =
 #' This function allows you to make bespoke lectures
 #' @param lecture_num Numeric vector of numbers corresponding to the essential lectures you want to use
 #' @param path Path to find files to build bespoke lecture
+#' @param output_file Path to make output file of bespoke tutorial
 #' @keywords lecture
 #' @export
 #' @examples
 #' make_lecture(list = c(0, 7, 10))
 
-make_lecture<- function(lecture_num, path = system.file("tutorials", package = "bespokelearnr")){
+make_lecture<- function(lecture_num, path = system.file("tutorials", package = "bespokelearnr"), output_file){
   list_files <- make_list(lecture_num)
-  yaml_list <- yaml::yaml.load(readLines("yaml_header_lecture.Rmd"))
-  setup_chunk <- readLines("setup_chunk.Rmd")
+  yaml_list <- yaml::yaml.load(readLines(paste0(path, "/", "yaml_header_lecture.Rmd")))
+  setup_chunk <- readLines(paste0(path, "/", "setup_chunk.Rmd"))
 
   output <- c(
     "---",
