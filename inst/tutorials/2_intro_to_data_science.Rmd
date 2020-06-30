@@ -42,3 +42,9 @@ excel_plot
 #need to add source
 ```
 
+## Your choice in programming language {.build}
+"Language wars" hyperinflate the differences in programming languages  
+  
+<bold>"It's not important which language you choose, but rather what you can do with it"</bold>  
+  
+The focus here will be on the R programming language

@@ -4,6 +4,13 @@ url <- "https://github.com/BAREJAA/bespokelearnr/blob/merge_essentials/inst/tuto
 knitr::include_graphics(url)
 ```
 
+## COVID-19 Data {.build}
+- Infection rates (epidemiology)  
+- Basic science data (sequencing, molecular biology, drug lead)  
+- Translational data (pre-clinical, Phase 1, Phase 2)  
+- Clinical data (Chest CT)  
+- Literature (pre-print and peer reviewed)
+
 ## Rapid emergence generated several healthcare decision-making challenges {.build}
 **Volume**  
 - Rapid data collection & storage allowed access to huge amounts of medical information  
