@@ -1,3 +1,30 @@
+---
+title: Counting COVID
+subtitle: Key elements of the analytical toolbox for understanding COVID-19
+author: Matthew Hirschey and Akshay Bareja
+date: ''
+output:
+  ioslides_presentation:
+    widescreen: yes
+runtime: shiny_prerendered
+---
+```{r setup, include=FALSE}
+library(learnr)
+library(tidyverse)
+library(knitr)
+library(here)
+library(twitterwidget)
+library(rlang)
+library(ggrepel)
+library(viridis)
+library(gghighlight)
+library(patchwork)
+knitr::opts_chunk$set(echo = FALSE, 
+                      fig.align="center")
+setwd(system.file(package = "bespokelearnr"))
+source("tutorials/bespokelecture/code/metadata.R") #loads dataset-specific variables
+source("tutorials/bespokelecture/code/bespoke.R") #loads custom objects
+```
 ## Emerging field of Data Science
 ```{r venn1, echo=FALSE, fig.cap="", out.height= '100%'}
 url <- "https://images.squarespace-cdn.com/content/v1/5150aec6e4b0e340ec52710a/1364352051365-HZAS3CLBF7ABLE3F5OBY/ke17ZwdGBToddI8pDm48kB2M2-8_3EzuSSXvzQBRsa1Zw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpxPe_8B-x4gq2tfVez1FwLYYZXud0o-3jV-FAs7tmkMHY-a7GzQZKbHRGZboWC-fOc/Data_Science_VD.png?format=1500w"
@@ -47,7 +74,4 @@ excel_plot
   
 <bold>"It's not important which language you choose, but rather what you can do with it"</bold>  
   
-The focus here will be on the R programming language  
-
-## Fin
-The end.  
+The focus here will be on the R programming language
