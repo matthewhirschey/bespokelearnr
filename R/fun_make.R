@@ -32,7 +32,7 @@ return(list_files)
 #' @examples
 #' make_tutorial(list = c(0, 7, 10))
 
-make_tutorial <- function(lecture_num, path = system.file("tutorials", package = "bespokelearnr"){
+make_tutorial <- function(lecture_num, path = system.file("tutorials", package = "bespokelearnr")){
   list_files <- make_list(lecture_num)
   yaml_list <- yaml::yaml.load(readLines("yaml_header_tutorial.Rmd"))
   setup_chunk <- readLines("setup_chunk.Rmd")
@@ -60,7 +60,7 @@ make_tutorial <- function(lecture_num, path = system.file("tutorials", package =
 #' @examples
 #' make_lecture(list = c(0, 7, 10))
 
-make_lecture<- function(lecture_num, path = system.file("tutorials", package = "bespokelearnr"){
+make_lecture<- function(lecture_num, path = system.file("tutorials", package = "bespokelearnr")){
   list_files <- make_list(lecture_num)
   yaml_list <- yaml::yaml.load(readLines("yaml_header_lecture.Rmd"))
   setup_chunk <- readLines("setup_chunk.Rmd")
