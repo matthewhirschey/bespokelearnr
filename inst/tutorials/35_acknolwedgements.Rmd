@@ -1,5 +1,5 @@
 ## Acknowledgements {.build}
-**Teaching Assistants**  
+**Co-Instructor**  
 - Akshay Bareja, D.Phil.  
   
 **Inspiration, ideas, packages, code**  
