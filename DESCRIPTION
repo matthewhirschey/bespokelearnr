@@ -12,7 +12,7 @@ Authors@R: c(
            role = c("aut", "ctb"),
            email = "akshay.bareja@duke.edu",
            comment = c(ORCID = "0000")))
-Description: This package contains functions and course materials to generate bespoke course content for zero-entry data science learning.
+Description: This package contains functions and course materials to generate bespoke course content for data science learning.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -25,7 +25,8 @@ Imports:
     dplyr,
     knitr, 
     yaml, 
-    rstudioapi
+    rstudioapi, 
+    learnr
 Suggests: 
     testthat,
     spelling
