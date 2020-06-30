@@ -43,12 +43,9 @@ excel_plot
 ```
 
 ## Your choice in programming language {.build}
-"Language wars" hyperinflate the differences in programming languages  
+- Data scientists and programmers have strong opinions about the differences in languages  
+  
+- The focus here will be on the R programming language  
   
 <bold>"It's not important which language you choose, but rather what you can do with it"</bold>  
-  
-The focus here will be on the R programming language  
-
-## Fin
-The end.  
-Really !!!
+    
