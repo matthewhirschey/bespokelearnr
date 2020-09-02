@@ -3,5 +3,5 @@
 ^LICENSE\.md$
 ^README\.Rmd$
 ^data-raw$
-^inst/tutorials/tmp
-/tmp
+^output$
+.here

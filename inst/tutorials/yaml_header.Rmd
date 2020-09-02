@@ -1,0 +1,5 @@
+---
+title: "Intro to R"
+subtitle: "Key elements of the data science toolbox"
+author: "Matthew Hirschey and Akshay Bareja"
+date: ""

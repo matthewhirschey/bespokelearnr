@@ -4,17 +4,14 @@
 \alias{make_lecture}
 \title{Make Lecture Function}
 \usage{
-make_lecture(lecture_num, output_file)
+make_lecture(lecture_num, test = FALSE)
 }
 \arguments{
 \item{lecture_num}{Numeric vector of numbers corresponding to the essential lectures you want to use}
 
-\item{output_file}{Path to place compiled file in 'tutorials/bespoketutorial' dir}
+\item{test}{A logical for developing function in inst/tutorials dir vs. installing function in tutorials dir}
 }
 \description{
 This function allows you to make bespoke lectures
-}
-\examples{
-make_lecture(list = c(0, 7, 10))
 }
 \keyword{lecture}

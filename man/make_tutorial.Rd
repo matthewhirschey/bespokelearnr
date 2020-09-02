@@ -4,17 +4,14 @@
 \alias{make_tutorial}
 \title{make_tutorial Function}
 \usage{
-make_tutorial(lecture_num, output_file)
+make_tutorial(lecture_num, test = FALSE)
 }
 \arguments{
 \item{lecture_num}{Numeric vector of numbers corresponding to the essential lectures you want to use}
 
-\item{output_file}{Path to place compiled file in 'tutorials/bespoketutorial' dir}
+\item{test}{A logical for developing function in inst/tutorials dir vs. installing function in tutorials dir}
 }
 \description{
 This function allows you to make bespoke tutorials
-}
-\examples{
-make_tutorial(list = c(0, 7, 10))
 }
 \keyword{tutorial}
