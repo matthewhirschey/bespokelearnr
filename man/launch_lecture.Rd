@@ -4,12 +4,12 @@
 \alias{launch_lecture}
 \title{launch_lecture function}
 \usage{
-launch_lecture()
+launch_lecture(test = FALSE)
+}
+\arguments{
+\item{test}{A logical for developing function in inst/tutorials dir vs. installing function in tutorials dir}
 }
 \description{
 This function allows you to launch the bespoke lecture you previously made
-}
-\examples{
-launch_lecture()
 }
 \keyword{tutorial}

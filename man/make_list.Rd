@@ -4,10 +4,12 @@
 \alias{make_list}
 \title{make_list function}
 \usage{
-make_list(lecture_num)
+make_list(lecture_num, test = FALSE)
 }
 \arguments{
 \item{lecture_num}{Numeric vector of numbers corresponding to the essential lectures you want to use}
+
+\item{test}{A logical for developing function in inst/tutorials dir vs. installing function in tutorials dir}
 }
 \description{
 This internal function allows you to make a list of lectures for bespoke content generation

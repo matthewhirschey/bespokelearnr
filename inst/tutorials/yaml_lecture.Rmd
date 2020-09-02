@@ -1,0 +1,5 @@
+output: 
+  ioslides_presentation:
+    widescreen: true
+runtime: shiny_prerendered
+---

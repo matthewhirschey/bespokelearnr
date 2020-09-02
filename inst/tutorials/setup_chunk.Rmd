@@ -11,7 +11,5 @@ library(gghighlight)
 library(patchwork)
 knitr::opts_chunk$set(echo = FALSE, 
                       fig.align="center")
-setwd(system.file(package = "bespokelearnr"))
-source("tutorials/bespokelecture/code/metadata.R") #loads dataset-specific variables
-source("tutorials/bespokelecture/code/bespoke.R") #loads custom objects
 ```
+
