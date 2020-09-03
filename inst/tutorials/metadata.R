@@ -1,13 +1,13 @@
 #set these variables (default is from mtcars dataset)
 
 dataframe_file_name <-'bespoke_dataframe' #don't change this variable
-dataframe_name <-'bespoke_dataframe'
-dataframe_title <-'proteins'
-dataframe_source <-'Uniprot'
-dataframe_desc <-'A dataset downloaded from Uniprot containing human proteome information'
-dataframe_about <-'This is the proteins dataset downloaded from Uniprot'
+dataframe_name <-'mtcars'
+dataframe_title <-'Base R mtcars Dataset'
+dataframe_source <-'Motor Trend magazine'
+dataframe_desc <-'The data were extracted from the 1974 Motor Trend US magazine.'
+dataframe_about <-'The dataset contains fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973–74 models).'
 
 #join
 dataframe_join_file_name <-'bespoke_dataframe_join' #don't change this variable
-dataframe_join_name <-'proteins_join'
-dataframe_join_about <-'This is a practice dataset for joining protiens'
+dataframe_join_name <-'mtcars_join'
+dataframe_join_about <-'A dataframe to practice joining'
