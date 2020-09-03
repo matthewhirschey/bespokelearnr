@@ -1,0 +1,26 @@
+# Concluding Thoughts
+
+## Data science enables {.build}
+- Data science enables data-driven information gathering and hypothesis generation  
+-- Scientific Research  
+-- Reviews  
+  
+- Data science enables the ability to ask new types of questions  
+  
+- Process-centric, not necessarily question-centric  
+  
+- Making things computable makes them actionable at zero marginal cost.  
+  
+- Workflows save time, achieve reproducibility  
+
+## Cheatsheet Resources
+<a href="https://rstudio.com/resources/cheatsheets" target="_blank">Cheatsheets</a><br>
+<center><iframe src="https://rstudio.com/resources/cheatsheets"></iframe></center>
+
+## Google Resources
+<a href="https://google.com/" target="_blank">Google.com</a><br>
+<center><iframe src="https://google.com"></iframe></center>
+
+## R4DS Resources
+<a href="https://r4ds.had.co.nz" target="_blank">R for Data Science</a><br>
+<center><iframe src="https://r4ds.had.co.nz"></iframe></center>

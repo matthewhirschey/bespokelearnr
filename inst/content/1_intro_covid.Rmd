@@ -1,0 +1,32 @@
+## COVID-19 rapidly infected people across the US
+```{r covid map, echo=FALSE, fig.cap="", out.height = '50%', out.width = '50%'}
+url <- "https://github.com/BAREJAA/bespokelearnr/blob/merge_essentials/inst/tutorials/bespokelecture/data/covid.gif?raw=true"
+knitr::include_graphics(url)
+```
+
+## COVID-19 Data {.build}
+- Infection rates (epidemiology)  
+- Basic science data (sequencing, molecular biology, drug lead)  
+- Translational data (pre-clinical, Phase 1, Phase 2)  
+- Clinical data (Chest CT)  
+- Literature (pre-print and peer reviewed)
+
+## Rapid emergence generated several healthcare decision-making challenges {.build}
+**Volume**  
+- Rapid data collection & storage allowed access to huge amounts of medical information  
+  
+**Ubiquity**  
+- Data became available anywhere across geography, social, and economic classes   
+  
+**Latency**  
+- Technology facilitates no delay in access to data    
+  
+## How do you make sense of COVID-19 data to make better health care decisions? {.build}
+**Data-driven** decision making!  
+  
+```{r hierarchy, echo=FALSE, fig.cap="", out.height = '100%'}
+url <- "https://upload.wikimedia.org/wikipedia/commons/0/06/DIKW_Pyramid.svg"
+knitr::include_graphics(url)
+```
+<font size = "1">https://en.wikipedia.org/wiki/DIKW_pyramid</font>
+  

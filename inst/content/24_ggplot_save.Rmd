@@ -1,0 +1,14 @@
+## Saving plots using `ggsave` {.build}
+
+If you make a plot there are a few ways to save it, though the simplest is to use `ggsave`  
+
+`ggsave("ggsaveexample.png", plot = last_plot())`  
+
+You can change the type of file you save or the size.  
+  
+`ggsave("ggsaveexample.pdf", plot = my_awesome_object, width = 6, height = 6, units = "cm")`  
+
+## Saving plots using ggsave
+Where does it save??  
+  
+`getwd()`

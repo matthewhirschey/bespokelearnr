@@ -1,0 +1,12 @@
+## Dealing with strings {.build}
+Dealing with character strings is a bit different than dealing with numbers in R?   
+  
+* Sort?  
+* Select?  
+* Change?  
+  
+Fortunately, the `tidyverse` as a package called `stringr` for dealing with them. 
+
+## Stringr
+<center><iframe src = "https://stringr.tidyverse.org"></iframe></center>
+
