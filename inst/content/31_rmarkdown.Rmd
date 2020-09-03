@@ -1,0 +1,88 @@
+## Markdown is a simplifed language to format text
+```{r rmarkdown_text, echo=FALSE, fig.cap="", out.width='75%'}
+url <- "https://d33wubrfki0l68.cloudfront.net/59f29676ef5e4d74685e14f801bbc10c2dbd3cef/c0688/lesson-images/markdown-1-markup.png"
+knitr::include_graphics(url)
+```
+
+## Markdown can 'markup' text to be {.build}
+- **bold**  
+- _italics_  
+- `code`  
+- unformatted text  
+- ### Medium headers (3)  
+- ###### Small headers (6)  
+- Bullets (like this list)  
+- [Links, such as to the github repository storing class material](https://github.com/matthewhirschey/)  
+- ...and many more
+  
+## Rmarkdown cheatsheet & quick reference
+<center><iframe src="https://rmarkdown.rstudio.com/lesson-15.html"></iframe></center>
+  
+# Rmarkdown <br>Code
+Any questions?  
+
+## Rmarkdown Code
+```{r rmarkdown_code, echo=FALSE, fig.cap="", out.width='66%'}
+url <- "https://github.com/matthewhirschey/tidybiology-plusds/raw/master/media/Rmarkdown-code.png"
+knitr::include_graphics(url)
+```
+
+## Rmarkdown Code Shortcut
+```{r rmarkdown_code_shortcut, echo=FALSE, fig.cap="", out.width='66%'}
+url <- "https://github.com/matthewhirschey/tidybiology-plusds/raw/master/media/Rmarkdown-code-shortcut.png"
+knitr::include_graphics(url)
+```
+
+## Rmarkdown Code Chunk Options
+```{r rmarkdown_chunk1, echo=FALSE, fig.cap="", out.width='66%'}
+url <- "https://github.com/matthewhirschey/tidybiology-plusds/raw/master/media/Rmarkdown-chunk1.png"
+knitr::include_graphics(url)
+```
+
+## Rmarkdown Code Chunk Options
+```{r rmarkdown_chunk2, echo=FALSE, fig.cap="", out.width='66%'}
+url <- "https://github.com/matthewhirschey/tidybiology-plusds/raw/master/media/Rmarkdown-chunk2.png"
+knitr::include_graphics(url)
+```
+
+## Rmarkdown Code Chunk Options
+```{r rmarkdown_chunk3, echo=FALSE, fig.cap="", out.width='66%'}
+url <- "https://github.com/matthewhirschey/tidybiology-plusds/raw/master/media/Rmarkdown-chunk3.png"
+knitr::include_graphics(url)
+```
+
+## Rmarkdown Code Chunk Options
+```{r rmarkdown_chunk4, echo=FALSE, fig.cap="", out.width='66%'}
+url <- "https://github.com/matthewhirschey/tidybiology-plusds/raw/master/media/Rmarkdown-chunk4.png"
+knitr::include_graphics(url)
+```
+
+## Rmarkdown Code Chunk Options
+```{r rmarkdown_chunk5, echo=FALSE, fig.cap="", out.width='66%'}
+url <- "https://github.com/matthewhirschey/tidybiology-plusds/raw/master/media/Rmarkdown-chunk5.png"
+knitr::include_graphics(url)
+```
+
+## Rmarkdown Code Chunk Options
+```{r rmarkdown_chunk6, echo=FALSE, fig.cap="", out.width='66%'}
+url <- "https://github.com/matthewhirschey/tidybiology-plusds/raw/master/media/Rmarkdown-chunk6.png"
+knitr::include_graphics(url)
+```
+
+## Rmarkdown Code Chunk Options
+```{r rmarkdown_chunk7, echo=FALSE, fig.cap="", out.width='66%'}
+url <- "https://github.com/matthewhirschey/tidybiology-plusds/raw/master/media/Rmarkdown-chunk7.png"
+knitr::include_graphics(url)
+```
+
+## Clean-up the Rmarkdown exercise
+1. Go to code/  
+2. Open 10_rmarkdown.Rmd  
+3. Inspect the code starting with the set-up chunk. Below it, you’ll see code that imports data, stores objects, and creates a graph.  
+4. Knit the document and see the results; pretty messy, huh?  
+5. Use what you've learn to execute the code, but not include the results of the set-up chunk and data import chunk.  
+6. Replace every **BOLD** with inline R code  
+7. Remove the {calculations} chunk so it is not included with the output  
+8. Change the {graph} chunk so that only the output of the plot is shown, but not the code.
+9. Re-Knit the document  
+10. **Beautiful!**  

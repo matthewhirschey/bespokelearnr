@@ -1,5 +1,0 @@
----
-title: 'Tidybiology'
-subtitle: 'Intro to Data Science using R'
-author: 'Matthew Hirschey & Akshay Bareja'
-date: '2020-09-03'

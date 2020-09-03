@@ -17,8 +17,8 @@ prepare_data <- function(bespoke_dataframe = NULL, test = FALSE){
     data <- "/extdata/"}
 
   if(is.null(bespoke_dataframe)){
-    bespoke_dataframe <-
-      readRDS(file = paste0(path, inst, data, "mtcars.Rds"))
+    load(file = paste0(path, "/data", "/mtcars.Rda"))
+    bespoke_dataframe <- mtcars
   }
   #import
   #code for import data here
@@ -65,6 +65,7 @@ message("Data prepared. File saved in extdata directory. Now make some metadata.
 #' This function allows you to prepare metadata for your bespoke dataset. If from_template = FALSE, then the function is expecting a bunch of variables to be assigned. If from_template = TRUE, then a 'dummy' template is made. This step is not necessary if using default mtcars dataset
 #' @param bespoke_dataframe name of an object in your global environment from which you created a bespoke dataset
 #' @param test A logical for developing function in inst/tutorials dir vs. installing function in tutorials dir
+#' @param dataframe_name Name of your dataframe
 #' @param dataframe_title Title of your dataframe
 #' @param dataframe_source Source of your dataframe
 #' @param dataframe_desc Description of your dataframe
@@ -75,6 +76,7 @@ message("Data prepared. File saved in extdata directory. Now make some metadata.
 #' @export
 
 prepare_metadata <- function(bespoke_dataframe = NULL,
+                             dataframe_name = "INSERT_NAME",
                              dataframe_title = "INSERT_TITLE",
                              dataframe_source = "INSERT_SOURCE",
                              dataframe_desc = "INSERT_DESC",
@@ -85,14 +87,13 @@ prepare_metadata <- function(bespoke_dataframe = NULL,
   if(test == TRUE) { #this would allow for saving the document; we might need to change to write out the output to R script
       path <- "/Users/matthewhirschey/Dropbox/DUKE/PROJECTS/bespokeDS/bespokelearnr"
       inst <- "/inst"
-      tutorials <- "/tutorials"
+      content <- "/content"
     } else {
       path <- system.file(package = "bespokelearnr")
       inst <- ""
-      tutorials <- "/tutorials"}
+      content <- "/content"}
   metadata_template <- paste0("#set these variables (default is from mtcars dataset)",
                      "\n",
-                     "\ndataframe_file_name <-", "'",  'bespoke_dataframe', "' #don't change this variable",
                      "\ndataframe_name <-", "'", 'mtcars', "'",
                      "\ndataframe_title <-", "'", 'Base R mtcars Dataset', "'",
                      "\ndataframe_source <-", "'", 'Motor Trend magazine', "'",
@@ -100,34 +101,30 @@ prepare_metadata <- function(bespoke_dataframe = NULL,
                      "\ndataframe_about <-", "'",  'The dataset contains fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973–74 models).', "'",
                      "\n",
                      "\n#join",
-                     "\ndataframe_join_file_name <-", "'", 'bespoke_dataframe_join', "' #don't change this variable",
                      "\ndataframe_join_name <-", "'",  'mtcars_join', "'",
                      "\ndataframe_join_about <-", "'",  'A dataframe to practice joining', "'"
   )
-
   if(is.null(bespoke_dataframe)){
     metadata_template <- unlist(metadata_template)
-    metadata_file <- paste0(path, inst, tutorials, "/metadata.R")
+    metadata_file <- paste0(path, inst, content, "/metadata.R")
     writeLines(metadata_template, con = metadata_file)
     message("Metadata prepared for default mtcars dataset.")
     return()
   }
-  metadata_bespoke <- paste0("#set these variables (default is from mtcars dataset)",
+  metadata_bespoke <- paste0("#set these variables",
            "\n",
-           "\ndataframe_file_name <-", "'",  'bespoke_dataframe', "' #don't change this variable",
-           "\ndataframe_name <-", "'", quote(bespoke_dataframe), "'",
+           "\ndataframe_name <-", "'", dataframe_name, "'",
            "\ndataframe_title <-", "'", dataframe_title, "'",
            "\ndataframe_source <-", "'", dataframe_source, "'",
            "\ndataframe_desc <-", "'", dataframe_desc, "'",
            "\ndataframe_about <-", "'",  dataframe_about, "'",
            "\n",
            "\n#join",
-           "\ndataframe_join_file_name <-", "'", 'bespoke_dataframe_join', "' #don't change this variable",
            "\ndataframe_join_name <-", "'",  dataframe_join_name, "'",
            "\ndataframe_join_about <-", "'",  dataframe_join_about, "'"
     )
   metadata_bespoke <- unlist(metadata_bespoke)
-  metadata_file <- paste0(path, inst, tutorials, "/metadata.R")
+  metadata_file <- paste0(path, inst, content, "/metadata.R")
   writeLines(metadata_bespoke, con = metadata_file)
   message(paste0("Metadata prepared for the ", dataframe_title, " dataset."))
 }
@@ -148,11 +145,11 @@ prepare_yaml <- function(test = FALSE,
   if(test == TRUE) {
     path <- "/Users/matthewhirschey/Dropbox/DUKE/PROJECTS/bespokeDS/bespokelearnr"
     inst <- "/inst"
-    tutorials <- "/tutorials"
+    content <- "/content"
   } else {
     path <- system.file(package = "bespokelearnr")
     inst <- ""
-    tutorials <- "/tutorials"}
+    content <- "/content"}
 
   yaml_head <- c(
     "---",
@@ -163,7 +160,7 @@ prepare_yaml <- function(test = FALSE,
   )
 
   yaml_head <- unlist(yaml_head)
-  yaml_head_file <- paste0(path, inst, tutorials, "/yaml_header.Rmd")
+  yaml_head_file <- paste0(path, inst, content, "/yaml_header.Rmd")
   writeLines(yaml_head, con = yaml_head_file)
 }
 
