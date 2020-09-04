@@ -134,7 +134,7 @@ make_tutorial <- function(lecture_num, tutorial_name = "bespoketutorial", test =
   yaml_tutorial <- yaml::yaml.load(readLines(paste0(path, inst, content, "/yaml_tutorial.Rmd")))
   yaml_list <- c(yaml_head, yaml_tutorial)
   setup_chunk <- readLines(paste0(path, inst, content, "/setup_chunk.Rmd"))
-  relative_data_path <- paste0(path, inst, content) #dataframe_file_name comes from metadata
+  relative_path <- paste0(path, inst, data) #dataframe_file_name comes from metadata
 
   tutorial_c <- c(
     "---",
