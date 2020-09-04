@@ -27,7 +27,8 @@ make_list <- function(lecture_num, test_var = FALSE){
 
   list_files <- list()
   textFiles<-textFiles[!is.na(textFiles)]
-  print(length(textFiles))
+  print(textFiles)
+
   if(length(textFiles!=0)){
     for(i in 1:length(textFiles)){
       filename<-paste0(path, inst, content, "/", textFiles[i])
