@@ -26,10 +26,16 @@ make_list <- function(lecture_num, test_var = FALSE){
   print(textFiles)
 
   list_files <- list()
-  for(i in 1:length(textFiles)){
-    list_files[[i]] <- readLines(paste0(path, inst, content, "/", textFiles[i]))
+  textFiles<-textFiles[!is.na(textFiles)]
+  print(textFiles)
+
+  if(length(textFiles!=0)){
+    for(i in 1:length(textFiles)){
+      filename<-paste0(path, inst, content, "/", textFiles[i])
+      list_files[[i]] <- readLines(filename)
+    }
   }
-return(list_files)
+  return(list_files)
 }
 
 #' Make Lecture Function
@@ -128,7 +134,7 @@ make_tutorial <- function(lecture_num, tutorial_name = "bespoketutorial", test =
   yaml_tutorial <- yaml::yaml.load(readLines(paste0(path, inst, content, "/yaml_tutorial.Rmd")))
   yaml_list <- c(yaml_head, yaml_tutorial)
   setup_chunk <- readLines(paste0(path, inst, content, "/setup_chunk.Rmd"))
-  relative_data_path <- paste0(path, inst, content) #dataframe_file_name comes from metadata
+  relative_path <- paste0(path, inst, data) #dataframe_file_name comes from metadata
 
   tutorial_c <- c(
     "---",
