@@ -30,7 +30,8 @@ Imports:
     rmarkdown,
     tidyr, 
     tidyselect, 
-    lubridate
+    lubridate, 
+    tibble
 Suggests: 
     testthat,
     spelling

@@ -28,10 +28,16 @@ prepare_data <- function(bespoke_dataframe = NULL, test = FALSE){
     tidyr::drop_na() ##-remove NA
 
   #code for tests here
-  ##test that bespoke_dataframe is df in global env.
-  ##test for a df
+  ##test that bespoke_dataframe is df & in global env.
+
   ##test for a column named id (alt test to see if bespoke fails)
-  # df MUST contain at least one character and one numeric variable
+  if ("id" %in% colnames(bespoke_dataframe) == FALSE) {
+    bespoke_dataframe <-
+      bespoke_dataframe %>%
+      tibble::rowid_to_column(var = "id")
+  }
+  ##df MUST contain at least one character and one numeric variable
+
   ##test for NULL/NA (return warning if it has them?)
 
   #code for unjoin
