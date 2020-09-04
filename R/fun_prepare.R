@@ -8,7 +8,7 @@
 
 prepare_data <- function(bespoke_dataframe = NULL, test = FALSE){
   if(test == TRUE) {
-    path <- "/Users/matthewhirschey/Dropbox/DUKE/PROJECTS/bespokeDS/bespokelearnr"
+    path <- getwd()
     inst <- "/inst"
     data <- "/extdata/"
   } else {
@@ -28,10 +28,16 @@ prepare_data <- function(bespoke_dataframe = NULL, test = FALSE){
     tidyr::drop_na() ##-remove NA
 
   #code for tests here
-  ##test that bespoke_dataframe is df in global env.
-  ##test for a df
+  ##test that bespoke_dataframe is df & in global env.
+
   ##test for a column named id (alt test to see if bespoke fails)
-  # df MUST contain at least one character and one numeric variable
+  if ("id" %in% colnames(bespoke_dataframe) == FALSE) {
+    bespoke_dataframe <-
+      bespoke_dataframe %>%
+      tibble::rowid_to_column(var = "id")
+  }
+  ##df MUST contain at least one character and one numeric variable
+
   ##test for NULL/NA (return warning if it has them?)
 
   #code for unjoin
@@ -85,7 +91,7 @@ prepare_metadata <- function(bespoke_dataframe = NULL,
                              dataframe_join_about = "INSERT_JOIN_ABOUT",
                              test = FALSE){
   if(test == TRUE) { #this would allow for saving the document; we might need to change to write out the output to R script
-      path <- "/Users/matthewhirschey/Dropbox/DUKE/PROJECTS/bespokeDS/bespokelearnr"
+      path <- getwd()
       inst <- "/inst"
       content <- "/content"
     } else {
@@ -143,7 +149,7 @@ prepare_yaml <- function(test = FALSE,
                          author = "INSERT_AUTH",
                          date = lubridate::today()){
   if(test == TRUE) {
-    path <- "/Users/matthewhirschey/Dropbox/DUKE/PROJECTS/bespokeDS/bespokelearnr"
+    path <- getwd()
     inst <- "/inst"
     content <- "/content"
   } else {

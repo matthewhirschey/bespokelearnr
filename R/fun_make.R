@@ -7,7 +7,7 @@
 make_list <- function(lecture_num, test_var = FALSE){
   #add output directory creation; add here because each content generation step will require a make_list fun(), so this will be universal
   if(test_var == TRUE) {
-    path <- "/Users/matthewhirschey/Dropbox/DUKE/PROJECTS/bespokeDS/bespokelearnr"
+    path <- getwd()
     inst <- "/inst"
     content <- "/content"
   } else {
@@ -42,7 +42,7 @@ return(list_files)
 
 make_lecture<- function(lecture_num, test = FALSE){
   if(test == TRUE) {
-    path <- "/Users/matthewhirschey/Dropbox/DUKE/PROJECTS/bespokeDS/bespokelearnr"
+    path <- getwd()
     inst <- "/inst"
     content <- "/content"
     data <- "/extdata"
@@ -98,7 +98,7 @@ make_lecture<- function(lecture_num, test = FALSE){
 
 make_tutorial <- function(lecture_num, test = FALSE){
   if(test == TRUE) {
-    path <- "/Users/matthewhirschey/Dropbox/DUKE/PROJECTS/bespokeDS/bespokelearnr"
+    path <- getwd()
     inst <- "/inst"
     content <- "/content"
     data <- "/extdata"
