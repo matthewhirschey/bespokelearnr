@@ -45,6 +45,10 @@ prepare_data <- function(bespoke_dataframe = NULL, test = FALSE){
     bespoke_dataframe %>%
     dplyr::select("id", sample(tidyselect::everything(), 1))
 
+  if (!dir.exists(paste0(path, inst, data))) {
+    dir.create(paste0(path, inst, data))
+  }
+
   data_file <- paste0(path, inst, data, quote(bespoke_dataframe_join), ".Rds")
   saveRDS(bespoke_dataframe_join, file = data_file)
 
