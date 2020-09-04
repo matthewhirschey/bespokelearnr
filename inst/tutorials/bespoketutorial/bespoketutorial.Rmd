@@ -1,11 +1,9 @@
 ---
 title: Tidybiology
 subtitle: Intro to Data Science using R
-author: Matthew Hirschey & Lucy Gu
-date: '2020-09-03'
-output:
-  ioslides_presentation:
-    widescreen: yes
+author: Matthew Hirschey & Akshay Bareja
+date: '2020-09-04'
+output: learnr::tutorial
 runtime: shiny_prerendered
 ---
 ```{r setup, include=FALSE}
@@ -34,30 +32,24 @@ df_input <- proteins # this line is for bespoke.R to get proper var
 source('/Users/matthewhirschey/Dropbox/DUKE/PROJECTS/bespokeDS/bespokelearnr/inst/content/metadata.R')
 source('/Users/matthewhirschey/Dropbox/DUKE/PROJECTS/bespokeDS/bespokelearnr/inst/content/bespoke.R')
 ```
-## COVID-19 rapidly infected people across the US
-```{r covid map, echo=FALSE, fig.cap="", out.height = '50%', out.width = '50%'}
-url <- "https://github.com/BAREJAA/bespokelearnr/blob/merge_essentials/inst/tutorials/bespokelecture/data/covid.gif?raw=true"
+## Doctors make decisions based on symptoms 
+```{r intro, echo=FALSE, fig.cap="", out.height = '100%'}
+url <- "https://source.unsplash.com/701-FJcjLAQ/500x500"
 knitr::include_graphics(url)
 ```
+<font size = "1">Photo by [National Cancer Institute on Unsplash](https://unsplash.com/@nci)</font>
 
-## COVID-19 Data {.build}
-- Infection rates (epidemiology)  
-- Basic science data (sequencing, molecular biology, drug lead)  
-- Translational data (pre-clinical, Phase 1, Phase 2)  
-- Clinical data (Chest CT)  
-- Literature (pre-print and peer reviewed)
-
-## Rapid emergence generated several healthcare decision-making challenges {.build}
+## New digital healthcare era introduces new decision-making challenges {.build}
 **Volume**  
-- Rapid data collection & storage allowed access to huge amounts of medical information  
+- Data collection & storage allows access to huge amounts of medical information  
   
 **Ubiquity**  
-- Data became available anywhere across geography, social, and economic classes   
+- Data are available anywhere across geography, social, and economic classes   
   
 **Latency**  
 - Technology facilitates no delay in access to data    
   
-## How do you make sense of COVID-19 data to make better health care decisions? {.build}
+## How do you make better health care decisions? {.build}
 **Data-driven** decision making!  
   
 ```{r hierarchy, echo=FALSE, fig.cap="", out.height = '100%'}

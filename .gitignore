@@ -5,3 +5,5 @@
 .Rproj*
 ^output$
 inst/extdata/*.Rds
+inst/output/*
+test-tutorial/

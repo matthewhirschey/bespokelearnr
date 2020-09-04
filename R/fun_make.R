@@ -53,12 +53,14 @@ make_lecture<- function(lecture_num, test = FALSE){
     content <- "/content"
     data <- "/extdata"
     output <- "/output"
+    media <- "/media"
   } else {
     path <- system.file(package = "bespokelearnr")
     inst <- ""
     content <- "/content"
     data <- "/extdata"
-    output <- "/output"}
+    output <- "/output"
+    media <- "/media"}
   if (!dir.exists(paste0(path, inst, output))) {
     dir.create(paste0(path, inst, output))
   }
@@ -92,6 +94,12 @@ make_lecture<- function(lecture_num, test = FALSE){
   lecture_c <- unlist(lecture_c)
   output_file <- paste0(path, inst, output, "/bespokelecture.Rmd")
   writeLines(lecture_c, con = output_file)
+
+  #copy over media
+  if (!dir.exists(paste0(path, inst, output, media))) {
+    dir.create(paste0(path, inst, output, media))
+  }
+  file.copy(from = paste0(path, inst, content, media), to = paste0(path, inst, output), recursive=TRUE)
 }
 
 #' make_tutorial Function
@@ -102,22 +110,23 @@ make_lecture<- function(lecture_num, test = FALSE){
 #' @keywords tutorial
 #' @export
 
-make_tutorial <- function(lecture_num, test = FALSE){
+make_tutorial <- function(lecture_num, tutorial_name = "bespoketutorial", test = FALSE){
   if(test == TRUE) {
     path <- getwd()
     inst <- "/inst"
     content <- "/content"
     data <- "/extdata"
     tutorials <- "/tutorials"
+    media <- "/media"
   } else {
     path <- system.file(package = "bespokelearnr")
     inst <- ""
     content <- "/content"
     data <- "/extdata"
-    tutorials <- "/tutorials"}
-  output <- "/tutorials"
-  if (!dir.exists(paste0(path, inst, output))) {
-    dir.create(paste0(path, inst, output))
+    tutorials <- "/tutorials"
+    media <- "/media"}
+  if (!dir.exists(paste0(path, inst, tutorials))) {
+    dir.create(paste0(path, inst, tutorials))
   }
   source(paste0(path, inst, content, "/metadata.R"))
   list_files <- make_list(lecture_num, test_var = test)
@@ -147,6 +156,17 @@ make_tutorial <- function(lecture_num, test = FALSE){
   )
 
   tutorial_c <- unlist(tutorial_c)
-  output_file <- paste0(path, inst, output, "/bespoketutorial.Rmd")
+  #make specific output directory
+  if (!dir.exists(paste0(path, inst, tutorials, "/", tutorial_name))) {
+    dir.create(paste0(path, inst, tutorials, "/", tutorial_name))
+  }
+  output_file <- paste0(path, inst, tutorials, "/", tutorial_name, "/", tutorial_name,".Rmd")
   writeLines(tutorial_c, con = output_file)
+
+  #copy over media
+  if (!dir.exists(paste0(path, inst, tutorials, "/", tutorial_name, media))) {
+    dir.create(paste0(path, inst, tutorials, "/", tutorial_name, media))
+  }
+  file.copy(from = paste0(path, inst, content, media), to = paste0(path, inst, tutorials, "/", tutorial_name), recursive=TRUE)
+
 }
