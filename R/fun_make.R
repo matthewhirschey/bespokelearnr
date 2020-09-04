@@ -26,10 +26,15 @@ make_list <- function(lecture_num, test_var = FALSE){
   print(textFiles)
 
   list_files <- list()
-  for(i in 1:length(textFiles)){
-    list_files[[i]] <- readLines(paste0(path, inst, content, "/", textFiles[i]))
+  textFiles<-textFiles[!is.na(textFiles)]
+  print(length(textFiles))
+  if(length(textFiles!=0)){
+    for(i in 1:length(textFiles)){
+      filename<-paste0(path, inst, content, "/", textFiles[i])
+      list_files[[i]] <- readLines(filename)
+    }
   }
-return(list_files)
+  return(list_files)
 }
 
 #' Make Lecture Function
