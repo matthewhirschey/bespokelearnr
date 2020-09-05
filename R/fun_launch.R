@@ -5,12 +5,12 @@
 #' @keywords tutorial
 #' @export
 
-launch_lecture <- function(test = FALSE){
+launch_lecture <- function(name = "bespokelecture", test = FALSE){
   if(test == TRUE) {
-    path <- paste0(getwd(),"/inst/output/")
-    rmarkdown::run(file = paste0(path, "bespokelecture.Rmd"),render_args=list(envir=.GlobalEnv))
+    path <- paste0(getwd(),"/inst/output/", name, "/")
+    rmarkdown::run(file = paste0(path, name, ".Rmd"), render_args=list(envir=.GlobalEnv))
   } else {
-  learnr::run_tutorial("bespokelecture", "bespokelearnr")
+  learnr::run_tutorial(name, "bespokelearnr")
   }
 }
 
@@ -21,11 +21,11 @@ launch_lecture <- function(test = FALSE){
 #' @keywords tutorial
 #' @export
 
-launch_tutorial <- function(test = FALSE){
+launch_tutorial <- function(name = "bespoketutorial", test = FALSE){
   if(test == TRUE) {
-    path <- paste0(getwd(),"/inst/tutorials/bespoketutorial/")
-    rmarkdown::run(file = paste0(path, "bespoketutorial.Rmd"))
+    path <- paste0(getwd(),"/inst/tutorials/", name, "/")
+    rmarkdown::run(file = paste0(path, name, ".Rmd"), render_args=list(envir=.GlobalEnv))
   } else {
-    learnr::run_tutorial("bespoketutorial", "bespokelearnr")
+    learnr::run_tutorial(name, "bespokelearnr")
   }
 }
