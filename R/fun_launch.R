@@ -8,7 +8,7 @@
 launch_lecture <- function(test = FALSE){
   if(test == TRUE) {
     path <- paste0(getwd(),"/inst/output/")
-    rmarkdown::run(file = paste0(path, "bespokelecture.Rmd"))
+    rmarkdown::run(file = paste0(path, "bespokelecture.Rmd"),render_args=list(envir=.GlobalEnv))
   } else {
   learnr::run_tutorial("bespokelecture", "bespokelearnr")
   }
