@@ -40,10 +40,20 @@ prepare_data <- function(bespoke_dataframe = NULL, test = FALSE){
 
   ##test for NULL/NA (return warning if it has them?)
 
+  #get most abundant class (var type) for joining to (try to) prevent errors when getting a singleton class
+  all_classes <- sapply(bespoke_dataframe, class)
+
+  abundant <-
+    tibble::tibble(col1 = all_classes) %>%
+    dplyr::count(col1) %>%
+    dplyr::arrange(dplyr::desc(n)) %>%
+    dplyr::slice(1) %>%
+    dplyr::pull(col1)
+
   #code for unjoin
   bespoke_dataframe_join <-
     bespoke_dataframe %>%
-    dplyr::select("id", sample(tidyselect::everything(), 1))
+    dplyr::select("id", sample(which(all_classes == abundant), 1))
 
   if (!dir.exists(paste0(path, inst, data))) {
     dir.create(paste0(path, inst, data))

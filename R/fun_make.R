@@ -46,7 +46,7 @@ make_list <- function(lecture_num, test_var = FALSE){
 #' @keywords lecture
 #' @export
 
-make_lecture<- function(lecture_num, test = FALSE){
+make_lecture<- function(lecture_num, name = "bespokelecture", test = FALSE){
   if(test == TRUE) {
     path <- getwd()
     inst <- "/inst"
@@ -85,21 +85,24 @@ make_lecture<- function(lecture_num, test = FALSE){
     paste0("joined <- ", dataframe_name, " %>% right_join(", dataframe_join_name, ", by = 'id')"),
     paste0("###"),
     paste0("df_input <- ", dataframe_name, " # this line is for bespoke.R to get proper var"),
-    paste0("source('", paste0(path, inst, content), "/metadata.R')"), #loads dataset-specific variables
-    paste0("source('", paste0(path, inst, content), "/bespoke.R')"), #loads custom objects
+    paste0("source('", paste0(path, inst, content), "/metadata.R', local = TRUE)"), #loads dataset-specific variables
+    paste0("source('", paste0(path, inst, content), "/bespoke.R', local = TRUE)"), #loads custom objects
     "```",
     list_files
   )
-
+  #make specific output directory
+  if (!dir.exists(paste0(path, inst, output, "/", name))) {
+    dir.create(paste0(path, inst, output, "/", name))
+  }
   lecture_c <- unlist(lecture_c)
-  output_file <- paste0(path, inst, output, "/bespokelecture.Rmd")
+  output_file <- paste0(path, inst, output, "/", name, "/", name,".Rmd")
   writeLines(lecture_c, con = output_file)
 
   #copy over media
-  if (!dir.exists(paste0(path, inst, output, media))) {
-    dir.create(paste0(path, inst, output, media))
+  if (!dir.exists(paste0(path, inst, output, "/", name, media))) {
+    dir.create(paste0(path, inst, output, "/", name, media))
   }
-  file.copy(from = paste0(path, inst, content, media), to = paste0(path, inst, output), recursive=TRUE)
+  file.copy(from = paste0(path, inst, content, media), to = paste0(path, inst, output, "/", name), recursive=TRUE)
 }
 
 #' make_tutorial Function
@@ -110,7 +113,7 @@ make_lecture<- function(lecture_num, test = FALSE){
 #' @keywords tutorial
 #' @export
 
-make_tutorial <- function(lecture_num, tutorial_name = "bespoketutorial", test = FALSE){
+make_tutorial <- function(lecture_num, name = "bespoketutorial", test = FALSE){
   if(test == TRUE) {
     path <- getwd()
     inst <- "/inst"
@@ -157,16 +160,16 @@ make_tutorial <- function(lecture_num, tutorial_name = "bespoketutorial", test =
 
   tutorial_c <- unlist(tutorial_c)
   #make specific output directory
-  if (!dir.exists(paste0(path, inst, tutorials, "/", tutorial_name))) {
-    dir.create(paste0(path, inst, tutorials, "/", tutorial_name))
+  if (!dir.exists(paste0(path, inst, tutorials, "/", name))) {
+    dir.create(paste0(path, inst, tutorials, "/", name))
   }
-  output_file <- paste0(path, inst, tutorials, "/", tutorial_name, "/", tutorial_name,".Rmd")
+  output_file <- paste0(path, inst, tutorials, "/", name, "/", name,".Rmd")
   writeLines(tutorial_c, con = output_file)
 
   #copy over media
-  if (!dir.exists(paste0(path, inst, tutorials, "/", tutorial_name, media))) {
-    dir.create(paste0(path, inst, tutorials, "/", tutorial_name, media))
+  if (!dir.exists(paste0(path, inst, tutorials, "/", name, media))) {
+    dir.create(paste0(path, inst, tutorials, "/", name, media))
   }
-  file.copy(from = paste0(path, inst, content, media), to = paste0(path, inst, tutorials, "/", tutorial_name), recursive=TRUE)
+  file.copy(from = paste0(path, inst, content, media), to = paste0(path, inst, tutorials, "/", name), recursive=TRUE)
 
 }
