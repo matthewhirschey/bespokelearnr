@@ -41,9 +41,9 @@ prepare_data <- function(bespoke_dataframe = NULL, test = FALSE){
   ##test for NULL/NA (return warning if it has them?)
 
   #get most abundant class (var type) for joining to (try to) prevent errors when getting a singleton class
-  all_classes <- sapply(bespoke_dataframe, class)
+  all_classes <- sapply(bespoke_dataframe, class) #gets classes of df cols
 
-  abundant <-
+  abundant <- #gets most abundance class
     tibble::tibble(col1 = all_classes) %>%
     dplyr::count(col1) %>%
     dplyr::arrange(dplyr::desc(n)) %>%
@@ -53,7 +53,7 @@ prepare_data <- function(bespoke_dataframe = NULL, test = FALSE){
   #code for unjoin
   bespoke_dataframe_join <-
     bespoke_dataframe %>%
-    dplyr::select("id", sample(which(all_classes == abundant), 1))
+    dplyr::select("id", sample(which(all_classes == abundant), 1)) #takes the most abundant class to pull a vec from
 
   if (!dir.exists(paste0(path, inst, data))) {
     dir.create(paste0(path, inst, data))
