@@ -12,7 +12,7 @@
 #              author = "Matthew & Lucy",
 #              date = today(),
 #              test = TRUE)
-# make_lecture(lecture_num = c(7,8),
+# make_lecture(lecture_num = c(10, 11, 20),
 #              test = TRUE)
 #
 # launch_lecture(test = TRUE)
@@ -41,7 +41,7 @@
 #              date = today(),
 #              test = TRUE)
 #
-# make_lecture(lecture_num = c(1, 2, 3),
+# make_lecture(lecture_num = c(10, 11, 20),
 #              test = TRUE)
 #
 # launch_lecture(test = TRUE)
@@ -70,11 +70,11 @@
 #              date = today(),
 #              test = TRUE)
 #
-# make_lecture(lecture_num = c(1, 2, 3),
+# make_lecture(lecture_num = c(10, 11, 20),
 #              name = "lecture1",
 #              test = TRUE)
 #
-# make_lecture(lecture_num = c(4, 5, 6),
+# make_lecture(lecture_num = c(10, 11, 20),
 #              name = "lecture2",
 #              test = TRUE)
 #

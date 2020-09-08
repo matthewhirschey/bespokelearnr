@@ -29,12 +29,12 @@ prepare_yaml(title = "Tidybiology",
              date = today(),
              test = TRUE)
 
-make_lecture(lecture_num = c(1, 2, 3),
+make_lecture(lecture_num = c(10, 11, 20),
              name = "class1",
              test = TRUE)
 
 # launch_lecture(name = "class1",
-#                test = TRUE)
+#                 test = TRUE)
 
 #class 2
 prepare_data(bespoke_dataframe = proteins,
@@ -56,7 +56,7 @@ prepare_yaml(title = "Tidybiology",
              date = today(),
              test = TRUE)
 
-make_lecture(lecture_num = c(1, 2, 3),
+make_lecture(lecture_num = c(10, 11, 20),
              name = "class2",
              test = TRUE)
 
