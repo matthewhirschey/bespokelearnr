@@ -23,11 +23,11 @@ make_list <- function(lecture_num, test_var = FALSE){
   for(i in 1:length(regex_string)){
     textFiles[i] <- all_files[stringr::str_detect(all_files, regex_string[i])]
   }
-  print(textFiles)
+  #print(textFiles)
 
   list_files <- list()
   textFiles<-textFiles[!is.na(textFiles)]
-  print(textFiles)
+  #print(textFiles)
 
   if(length(textFiles!=0)){
     for(i in 1:length(textFiles)){
