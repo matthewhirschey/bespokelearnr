@@ -173,3 +173,20 @@ make_tutorial <- function(lecture_num, name = "bespoketutorial", test = FALSE){
   file.copy(from = paste0(path, inst, content, media), to = paste0(path, inst, tutorials, "/", name), recursive=TRUE)
 
 }
+
+get_lectures<-function(test_var = T){
+  if(test_var == T) {
+    path <- getwd()
+    inst <- "/inst"
+    content <- "/content"
+  } else {
+    path <- system.file(package = "bespokelearnr")
+    inst <- ""
+    content <- "/content"}
+  all_files <- list.files(paste0(path, inst, content))
+  all_files <- all_files[stringr::str_detect(all_files, "_")]
+  all_files <- all_files[stringr::str_detect(all_files, ".Rmd")]
+  all_files <- all_files[grepl("^[[:digit:]]+",all_files)]
+  print(all_files)
+  str(all_files)
+}
