@@ -36,3 +36,6 @@ df_id_vec <- df_input %>% select(matches(df_id_name)) #not used
 # df_joined_string1_name <- df_joined_strings[1] #family_history
 # df_joined_string2_name <- df_joined_strings[2] #medication_hx
 # df_joined_string3_name <- df_joined_strings[3] #health_status
+
+df_2_notid <- df_input2  %>% select_if(~is.character(.)) %>% select(-contains('id'))
+df_2_col <- sample(colnames(df_2_notid),1)
