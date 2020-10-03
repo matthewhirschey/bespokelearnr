@@ -9,9 +9,9 @@ Most often, you will need to find a data file (such as csv), and import it
 ## Importing data into R {.build}
 For the purpose of this class, we have generated a **simulated** dataset of `r dataframe_join_about` to accompany the `r dataframe_name` dataset.  
 
-To import the `r dataframe_join_file_name` file into RStudio, run the following:  
+To import the `r dataframe_join_name` file into RStudio, run the following:  
   
-``r dataframe_join_name` <- read_csv(here::here("data", "`r dataframe_join_file_name`"))`
+``r dataframe_join_name` <- read_csv(here::here("data", "`r dataframe_join_name`"))`
 
 Go to code/  
 Open 08_import_and_join.Rmd  
