@@ -85,6 +85,7 @@ make_lecture<- function(lecture_num, name = "bespokelecture", test = FALSE){
     paste0("joined <- ", dataframe_name, " %>% right_join(", dataframe_join_name, ", by = 'id')"),
     paste0("###"),
     paste0("df_input <- ", dataframe_name, " # this line is for bespoke.R to get proper var"),
+    paste0("df_input2 <- ", dataframe_join_name),
     paste0("source('", paste0(path, inst, content), "/metadata.R', local = TRUE)"), #loads dataset-specific variables
     paste0("source('", paste0(path, inst, content), "/bespoke.R', local = TRUE)"), #loads custom objects
     "```",
@@ -188,5 +189,4 @@ get_lectures<-function(test_var = T){
   all_files <- all_files[stringr::str_detect(all_files, ".Rmd")]
   all_files <- all_files[grepl("^[[:digit:]]+",all_files)]
   print(all_files)
-  str(all_files)
 }
