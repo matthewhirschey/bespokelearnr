@@ -3,5 +3,8 @@
 ^LICENSE\.md$
 ^README\.Rmd$
 ^data-raw$
+^extdata$
 ^output$
-.here
+^tutorials$
+^test_tidybiology\.R$
+\.here

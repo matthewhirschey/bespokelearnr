@@ -4,7 +4,7 @@
 \alias{launch_tutorial}
 \title{launch_tutorial function}
 \usage{
-launch_tutorial(test = FALSE)
+launch_tutorial(name = "bespoketutorial", test = FALSE)
 }
 \arguments{
 \item{test}{A logical for developing function in inst/tutorials dir vs. installing function in tutorials dir}
