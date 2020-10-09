@@ -4,7 +4,7 @@
 \alias{make_tutorial}
 \title{make_tutorial Function}
 \usage{
-make_tutorial(lecture_num, test = FALSE)
+make_tutorial(lecture_num, name = "bespoketutorial", test = FALSE)
 }
 \arguments{
 \item{lecture_num}{Numeric vector of numbers corresponding to the essential lectures you want to use}

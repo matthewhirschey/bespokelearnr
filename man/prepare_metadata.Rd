@@ -6,6 +6,7 @@
 \usage{
 prepare_metadata(
   bespoke_dataframe = NULL,
+  dataframe_name = "INSERT_NAME",
   dataframe_title = "INSERT_TITLE",
   dataframe_source = "INSERT_SOURCE",
   dataframe_desc = "INSERT_DESC",
@@ -17,6 +18,8 @@ prepare_metadata(
 }
 \arguments{
 \item{bespoke_dataframe}{name of an object in your global environment from which you created a bespoke dataset}
+
+\item{dataframe_name}{Name of your dataframe}
 
 \item{dataframe_title}{Title of your dataframe}
 

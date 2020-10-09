@@ -4,7 +4,7 @@
 \alias{make_list}
 \title{make_list function}
 \usage{
-make_list(lecture_num, test = FALSE)
+make_list(lecture_num, test_var = FALSE)
 }
 \arguments{
 \item{lecture_num}{Numeric vector of numbers corresponding to the essential lectures you want to use}
