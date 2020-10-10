@@ -3,4 +3,7 @@
 .RData
 .DS_Store
 .Rproj*
-/tmp
+^output$
+inst/extdata/*.Rds
+inst/output/*
+test-tutorial/
