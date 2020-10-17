@@ -38,7 +38,7 @@ This may sound complicated, but R Markdown makes it extremely simple by encapsul
   
 - Objects made in one code chunk will be available to code in later code chunks, but not before  
   
-- For example, first create `r dataframe_name` and then using `dplyr::left_join` you create `r dataframe_joined_name`, `r dataframe_name` will be available later on in the document to do this. **However, you cannot use `r dataframe_joined_name` in a code chunk before you make it, even if it is available in your environmnet**  
+- For example, first create `r dataframe_name` and then using `dplyr::left_join` you create `r dataframe_join_name`, `r dataframe_name` will be available later on in the document to do this. **However, you cannot use `r dataframe_join_name` in a code chunk before you make it, even if it is available in your environmnet**  
   
 - To keep this straight, just think (and code) in sequential chunks
 

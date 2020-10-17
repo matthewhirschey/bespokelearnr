@@ -36,7 +36,19 @@ prepare_data <- function(bespoke_dataframe = NULL, test = FALSE){
       bespoke_dataframe %>%
       tibble::rowid_to_column(var = "id")
   }
+
+
   ##df MUST contain at least one character and one numeric variable
+
+  numeric <- bespoke_dataframe %>% select_if(~is.numeric(.) & length(unique(.)) > 10) %>% select(-contains('id'))
+  if(ncol(numeric)<1){
+    message("Not enough numeric variables")
+  }
+  character <- df_input %>% select_if(~is.character(.)) %>% select(-contains('id'))
+  if(ncol(character)<1){
+    message("Not enough character variables")
+  }
+
 
   ##test for NULL/NA (return warning if it has them?)
 
