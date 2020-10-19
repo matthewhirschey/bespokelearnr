@@ -11,15 +11,15 @@ The output with either be 1 (match), or 0 (no match)
 <div class= "red2"> Example </div>  
 In this code:  
 - string we want to evaluate is ``r dataframe_join_name`$`r df_2_col``  
-- pattern we want to count `"High Cholesterol"`  
+- pattern we want to count `r word1`  
 
-`str_count(```r dataframe_join_name`$`r df_2_col```, "High Cholesterol")`
+`str_count(```r dataframe_join_name`$`r df_2_col```, ```r word1```)`
 
 ## Counting
-`str_count(```r dataframe_join_name`$`r df_2_col```, "High Cholesterol")`
+`str_count(```r dataframe_join_name`$`r df_2_col```, ```r word1```)`
 
 ```{r str_count example, echo= FALSE, warning = FALSE}
-str_count(df_input2[df_2_col], "High Cholesterol")
+str_count(df_input2[df_2_col], word1)
 ```
 
 ## Summarizing our counts
@@ -34,14 +34,14 @@ Try it below:
 
 ## Matching subsets of strings {.build}
 
-We previously matched the entire string "High Cholesterol"  
+We previously matched the entire string `r word1` 
 But we can use the same function to detect patterns within longer strings.  
   
 Let's look for how many patients take a statin of any kind using
-`str_count(```r dataframe_join_name`$`r df_2_col```, "statin")` 
+`str_count(```r dataframe_join_name`$`r df_2_col```, ```r word2```)` 
 
 ## What about subsets of strings?  
-`str_count(```r dataframe_join_name`$`r df_2_col```, "statin")` 
+`str_count(```r dataframe_join_name`$`r df_2_col```, ```r word2```)` 
 
 What does the ouput mean?  
 ```{r str_count_exercise, exercise = TRUE}
