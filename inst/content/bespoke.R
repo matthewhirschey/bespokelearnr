@@ -39,3 +39,14 @@ df_id_vec <- df_input %>% select(matches(df_id_name)) #not used
 
 df_2_notid <- df_input2  %>% select_if(~is.character(.)) %>% select(-contains('id'))
 df_2_col <- sample(colnames(df_2_notid),1)
+word1 <- unlist(str_split(as.character(df_2_notid[1,df_2_col])," "))[1]
+
+
+l <- nchar(word1)
+length<-l-1
+if(l>=5){
+  length <- 5
+}
+s<-paste0("^.{",length,"}")
+word2 <- stringr::str_extract(unlist(str_split(as.character(df_2_notid[1,df_2_col])," "))[1],s)
+

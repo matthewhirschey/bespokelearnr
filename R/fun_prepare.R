@@ -44,7 +44,7 @@ prepare_data <- function(bespoke_dataframe = NULL, test = FALSE){
   if(ncol(numeric)<1){
     message("Not enough numeric variables")
   }
-  character <- df_input %>% select_if(~is.character(.)) %>% select(-contains('id'))
+  character <- bespoke_dataframe %>% select_if(~is.character(.)) %>% select(-contains('id'))
   if(ncol(character)<1){
     message("Not enough character variables")
   }
