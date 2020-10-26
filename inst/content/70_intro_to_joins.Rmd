@@ -4,12 +4,6 @@ There are many times when you have two or more overlapping datasets that you wou
 
 The `dplyr` package has a number of `*_join` functions for this purpose
 
-```{r left_join, echo=FALSE, fig.cap="", out.height='50%'}
-url <- "https://github.com/matthewhirschey/tidybiology-plusds/raw/master/media/dplyr-joins.png"
-knitr::include_graphics(url)
-```
-
-
 ## `left_join` {.build}
 
 Returns all rows from a, and all columns from a and b
@@ -17,6 +11,13 @@ Returns all rows from a, and all columns from a and b
 Rows in a with no match in b will have NA values in the new columns
 
 If there are multiple matches between a and b, all combinations of the matches are returned
+
+## `left_join` {.build}
+
+```{r left_join, echo=FALSE, fig.cap="tidyexplain by gadenbuie", out.height='66%'}
+url <- "https://github.com/gadenbuie/tidyexplain/blob/master/images/left-join.gif?raw=true"
+knitr::include_graphics(url)
+```
 
 ## `left_join` example {.build}
 
@@ -33,8 +34,8 @@ Complete the exercise to join the two datasets.
 Now you have one dataset with additional useful information
 
 ## `right_join`
-```{r right_join, echo=FALSE, fig.cap="", out.height='66%'}
-url <- "https://github.com/matthewhirschey/tidybiology-plusds/raw/master/media/dplyr-joins.png"
+```{r right_join, echo=FALSE, fig.cap="tidyexplain by gadenbuie", out.height='66%'}
+url <- "https://github.com/gadenbuie/tidyexplain/blob/master/images/right-join.gif?raw=true"
 knitr::include_graphics(url)
 ```
 
@@ -49,8 +50,8 @@ If there are multiple matches between a and b, all combinations of the matches a
 This is conceptually equivalent to a `left_join`, but can be useful when stringing together multiple steps using %>% 
 
 ## `inner_join`
-```{r inner_join, echo=FALSE, fig.cap="", out.height='66%'}
-url <- "https://github.com/matthewhirschey/tidybiology-plusds/raw/master/media/dplyr-joins.png"
+```{r inner_join, echo=FALSE, fig.cap="tidyexplain by gadenbuie", out.height='66%'}
+url <- "https://github.com/gadenbuie/tidyexplain/blob/master/images/inner-join.gif?raw=true"
 knitr::include_graphics(url)
 ```
 
@@ -60,8 +61,8 @@ Returns all rows from a where there are matching values in b, and all columns fr
 If there are multiple matches between a and b, all combination of the matches are returned
 
 ## `full_join`
-```{r full_join, echo=FALSE, fig.cap="", out.height='66%'}
-url <- "https://github.com/matthewhirschey/tidybiology-plusds/raw/master/media/dplyr-joins.png"
+```{r full_join, echo=FALSE, fig.cap="tidyexplain by gadenbuie", out.height='66%'}
+url <- "https://github.com/gadenbuie/tidyexplain/blob/master/images/full-join.gif?raw=true"
 knitr::include_graphics(url)
 ```
 

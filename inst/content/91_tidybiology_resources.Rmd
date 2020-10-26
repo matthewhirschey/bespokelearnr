@@ -1,8 +1,4 @@
-## Tidybiology Website
-<a href="https:/tidybiology.org" target="_blank">tidybiology.org</a><br>
-<center><iframe src="https://tidybiology.org"></iframe></center>
-
 ## Tidybiology Videos
 <a href="https://www.youtube.com/channel/UCstAS6IpgYgZ9Cvcag_YlCQ" target="_blank">tidybiology YouTube Channel</a><br>
-<center><iframe src="https://www.youtube.com/channel/UCstAS6IpgYgZ9Cvcag_YlCQ"></iframe></center>
+<!-- <center><iframe src="https://www.youtube.com/channel/UCstAS6IpgYgZ9Cvcag_YlCQ"></iframe></center> -->
 
