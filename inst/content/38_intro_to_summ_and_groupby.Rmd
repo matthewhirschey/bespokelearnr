@@ -22,5 +22,3 @@ For example, to calculate the mean `r colnames(df_numeric_select)`, run the foll
 ```{r groupby_exercise, exercise=TRUE}
 
 ```
-  
-*remember this pair! 

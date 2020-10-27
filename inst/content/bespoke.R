@@ -37,7 +37,7 @@ df_id_vec <- df_input %>% select(matches(df_id_name)) #not used
 # df_joined_string2_name <- df_joined_strings[2] #medication_hx
 # df_joined_string3_name <- df_joined_strings[3] #health_status
 
-df_2_notid <- df_input  %>% select_if(~is.character(.)) %>% select(-contains('id'))
+df_2_notid <- df_input  %>% select_if(~is.character(.)) %>% select(-contains('id'), -contains('sequence'))
 df_2_col <- sample(colnames(df_2_notid),1)
 word1 <- unlist(str_split(as.character(df_2_notid[1,df_2_col])," "))[1]
 
