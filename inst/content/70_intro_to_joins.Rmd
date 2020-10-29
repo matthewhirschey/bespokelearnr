@@ -6,32 +6,39 @@ The `dplyr` package has a number of `*_join` functions for this purpose
 
 ## `left_join` {.build}
 
-Returns all rows from a, and all columns from a and b
-
-Rows in a with no match in b will have NA values in the new columns
-
-If there are multiple matches between a and b, all combinations of the matches are returned
-
-## `left_join` {.build}
-
 ```{r left_join, echo=FALSE, fig.cap="tidyexplain by gadenbuie", out.height='66%'}
 url <- "https://github.com/gadenbuie/tidyexplain/blob/master/images/left-join.gif?raw=true"
 knitr::include_graphics(url)
 ```
 
+## `left_join` {.build}
+
+Returns all rows from `x`, and all columns from `x` and `y`
+
+Rows in `x` with no match in `y` will have NA values in the new columns
+
+If there are multiple matches between `x` and `y`, all combinations of the matches are returned
+
 ## `left_join` example {.build}
 
-Take a look at the variables in each dataset - `r dataframe_name` and `r dataframe_join_name`  
+Take a look at the variables in each dataset - ``r dataframe_name`` and ``r dataframe_join_name``  
 
-You will notice that both datasets contain common variable - `r df_id_name`. This can therefore serve as a common variable to join on. Let's join on this:  
+You will notice that both datasets contain a common variable - ``r colnames(df_id[1])``. This can therefore serve as a common variable to join on. Let's join on this:  
   
-`left_join` `r dataframe_name` with `r dataframe_join_name` and assign the output to a new object called ``r dataframe_name`_join_left`
+`left_join` ``r dataframe_name`` with ``r dataframe_join_name`` and assign the output to a new object called ``r dataframe_name`_join_left`
 
-Go to code/  
-Open 08_import_and_join.Rmd  
-Complete the exercise to join the two datasets.  
-  
-Now you have one dataset with additional useful information
+``r dataframe_name`_join_left <-`
+      `left_join(`r dataframe_name`, `r dataframe_join_name`, by = '`r colnames(df_id[1])`')`
+
+## `left_join` example {.build}
+``r dataframe_name`_join_left <-`
+      `left_join(`r dataframe_name`, `r dataframe_join_name`, by = '`r colnames(df_id[1])`')`
+
+```{r left_join example, echo=FALSE, fig.cap="", out.height='66%'}
+df_join <- left_join(df_input, df_input2, by = colnames(df_id[1]))
+df_join
+```
+
 
 ## `right_join`
 ```{r right_join, echo=FALSE, fig.cap="tidyexplain by gadenbuie", out.height='66%'}
@@ -41,11 +48,11 @@ knitr::include_graphics(url)
 
 
 ## `right_join` {.build}
-Returns all rows from b, and all columns from a and b
+Returns all rows from `y`, and all columns from `x` and `y`
 
-Rows in b with no match in a will have NA values in the new columns
+Rows in `y` with no match in `x` will have NA values in the new columns
 
-If there are multiple matches between a and b, all combinations of the matches are returned
+If there are multiple matches between `x` and `y`, all combinations of the matches are returned
   
 This is conceptually equivalent to a `left_join`, but can be useful when stringing together multiple steps using %>% 
 
@@ -56,9 +63,9 @@ knitr::include_graphics(url)
 ```
 
 ## `inner_join` {.build}
-Returns all rows from a where there are matching values in b, and all columns from a and b
+Returns all rows from `x` where there are matching values in `y`, and all columns from `x` and `y`
 
-If there are multiple matches between a and b, all combination of the matches are returned
+If there are multiple matches between `x` and `y`, all combination of the matches are returned
 
 ## `full_join`
 ```{r full_join, echo=FALSE, fig.cap="tidyexplain by gadenbuie", out.height='66%'}
@@ -67,6 +74,6 @@ knitr::include_graphics(url)
 ```
 
 ## `full_join` {.build}
-Returns all rows and all columns from both a and b  
+Returns all rows and all columns from both `x` and `y`  
 
 Where there are no matching values, returns NA for the one missing  

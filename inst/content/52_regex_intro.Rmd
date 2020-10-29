@@ -8,9 +8,9 @@ Think of regex as a separate language, with it's own code, syntax, and rules.
   
 Regex rules allow complex matching patterns for strings, to ensure matching *exactly* the content desired
   
-It is far too complex to cover in its entirely here, but here is one specific example.  
+It is far too complex to cover in its entirety here, but here is one specific example.  
   
-**GOAL**: identify all of the patients that have a father with a history of disease, but excluding grandfathers in the results. 
+**GOAL**: identify all elements of `r df_2_col` that begin with either the letter "A" or the letter "B".
   
 ## Regular Expression Example {.build}
 <div class="red2"> Example </div>  
