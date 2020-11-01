@@ -18,8 +18,8 @@
 <center><iframe src="https://rstudio.com/resources/cheatsheets"></iframe></center>
 
 ## Google Resources
-<a href="https://google.com/" target="_blank">Google.com</a><br>
-<center><iframe src="https://google.com"></iframe></center>
+<a href="https://www.google.com/" target="_blank">Google.com</a><br>
+<!-- <center><iframe src="https://www.google.com"></iframe></center> -->
 
 ## R4DS Resources
 <a href="https://r4ds.had.co.nz" target="_blank">R for Data Science</a><br>

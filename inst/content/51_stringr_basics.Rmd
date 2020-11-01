@@ -10,16 +10,16 @@ The output with either be 1 (match), or 0 (no match)
 
 <div class= "red2"> Example </div>  
 In this code:  
-- string we want to evaluate is ``r dataframe_join_name`$`r df_2_col``  
-- pattern we want to count `r word1`  
+- string we want to evaluate is `r dataframe_name`$`r df_2_col`  
+- pattern we want to count is "`r word1`"  
 
-`str_count(```r dataframe_join_name`$`r df_2_col```, ```r word1```)`
+`str_count(`r dataframe_name`$`r df_2_col`, '`r word1`')`  
 
 ## Counting
-`str_count(```r dataframe_join_name`$`r df_2_col```, ```r word1```)`
+`str_count(`r dataframe_name`$`r df_2_col`, '`r word1`')`
 
-```{r str_count example, echo= FALSE, warning = FALSE}
-str_count(df_input2[df_2_col], word1)
+```{r str_count, exercise = TRUE}
+
 ```
 
 ## Summarizing our counts
@@ -27,21 +27,20 @@ A bunch of 0 and 1 are not incredibly useful.
 
 But since R is good at adding, we can simply wrap the previous expression in `sum()`  
 
-Try it below:  
+Try it below:    
 ```{r sum_string, exercise = TRUE}
 
 ```
 
 ## Matching subsets of strings {.build}
 
-We previously matched the entire string `r word1` 
+We previously matched the entire string "`r word1`" 
 But we can use the same function to detect patterns within longer strings.  
   
-Let's look for how many patients take a statin of any kind using
-`str_count(```r dataframe_join_name`$`r df_2_col```, ```r word2```)` 
+`str_count(`r dataframe_name`$`r df_2_col`, '`r word2`')`
 
 ## What about subsets of strings?  
-`str_count(```r dataframe_join_name`$`r df_2_col```, ```r word2```)` 
+`str_count(`r dataframe_name`$`r df_2_col`, '`r word2`')`
 
 What does the ouput mean?  
 ```{r str_count_exercise, exercise = TRUE}
@@ -50,18 +49,9 @@ What does the ouput mean?
 
 ## A note about string patterns
 
-When using a stringr function, you may get an output saying a string pattern doesn't exist. If you know for sure it does, <div class="blue"> double check capitalization </div>.  
+When using a stringr function, you may get an output saying a string pattern doesn't exist. If you know for sure it does, <div class="blue"> double check capitalization </div>  
   
 **The string must match exactly, or it will not be found!**
-
-## stringr Exercise
-How many people having an `"auntie" or "aunt"` in their health history?  
-  
-Go to code/  
-Open 09_stringr.Rmd  
-Complete the exercise. 
-
-
 
 ## Detecting strings {.build}
 In addition to counting, we can use another function `str_detect()` to logically evaluate a character string.  
@@ -72,52 +62,46 @@ Practially, `str_detect` is used to detect the presence or absence of a pattern 
 
 ## Logic Evaluation 
 <div class= "red2"> Example </div>  
-Find the patients with diabetes using the following code  
-  
-`str_detect(```r dataframe_join_name`$`r df_2_col```, "Diabetic")`  
+Find elements in `r df_2_col` that matches "`r word2`"  
+
+`str_detect(`r dataframe_name`$`r df_2_col`, '`r word2`')`
   
 ```{r strdetect, exercise=TRUE}
 
 ```
 
 ## Modifiying strings with `str_replace()` {.build}
-In the df_2_col column we have:  
--`"Diabetic"`  
--`"High Cholesterol"`  
--`"Normal blood sugar and cholesterol"`  
-  
-But let's say we want to simplify healthy individuals to `"Normal"`
+In the case of `r df_2_col`, say we want to replace every `r word1` with "IGF1" because `r word1` is incorrect.  
 
-`str_replace(```r dataframe_join_name`$`r df_2_col```, "Normal blood sugar and cholesterol", "Normal")`
+`str_replace(`r dataframe_name`$`r df_2_col`, '`r word1`', 'IGF1')`
 
 ```{r str_replace, exercise=TRUE}
 
 ```
 
 ## Modifiying strings with `str_replace()` {.build}
-We use this same code to  modify the `df_2_col` column by assigning it to the same variable     
+We use this same code to  modify the `r df_2_col` column by assigning it to the same variable     
   
-`dataframe_join_name$df_2_col <-`  
-       `str_replace(dataframe_join_name$df_2_col, "Normal blood sugar and cholesterol", "normal")`
+``r dataframe_name`$`r df_2_col` <-`       
+       `str_replace(`r dataframe_name`$`r df_2_col`, '`r word1`', 'IGF1')`
 
 ```{r str_replace in col, warning = FALSE, echo=FALSE}
-df_input2[df_2_col] <- 
-  str_replace(df_input2[df_2_col], "Normal blood sugar and cholesterol", "normal")
+df_input[df_2_col] <- 
+  str_replace(df_input[df_2_col], word1, "IGF1")
 
-head(df_input2[df_2_col], n = 10)
+head(df_input[df_2_col], n = 10)
 ```
 
 ## Using `stringr` with `dplyr` {.build}
-We can use `stringr` functions in tandem with `dplyr` functions.  
+We can use `stringr` functions in tandem with `dplyr` functions.    
   
 <div class= "red2"> Example </div>  
-We want to make a logical variable (`TRUE`/`FALSE`) that tells us if a patient has a normal health history using  
 
-`dataframe_join_name2 <- dataframe_join_name %>% mutate(healthy = str_detect(df_2_col, "normal"))` 
+`new_df <-` 
+  ``r dataframe_name` %>%`  
+   `mutate(new_col = str_detect(`r df_2_col`, '`r word2`'))`
 
-```{r stringr with dplyr, echo=FALSE, warning=FALSE}
-df_input22 <- mutate(df_input2, condition = str_detect(df_2_col, "normal"))
+```{r stringr_with_dplyr, exercise=TRUE}
 
-head(df_input22$condition, n = 10)
 ```
  
